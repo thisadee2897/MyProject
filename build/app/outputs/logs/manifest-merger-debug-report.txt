@@ -1,0 +1,244 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+MERGED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/24552db6d76704c222f224f7b71bd079/jetified-zxing-1.9.13/AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/34e67bb5a31f9ffa82bcc0a1fb36e7c5/jetified-core-1.9.13/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/df02db549fcc7e46355098be64ade42f/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [:shared_preferences] /Users/thisadee/Documents/my_qrcode/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /Users/thisadee/Documents/my_qrcode/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.media:media:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/85ba1909c0c886e684d554e365416ff5/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/3dbac3eadddaf4b0a370901ae2f2655e/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/96578e03ac7ba360f80d3981399a065a/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.2.1] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/07f48808c7ba6697daeb0eff8761a086/material-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/4294b64d0372e37107d94a132048e96e/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/820df340371732d16f6265a6e86c86e7/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/101fe5047326e1e5da5cc58ba902d464/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/5c0fb4a12d6bd357af2fcd633cf0fc12/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/753600ec9b0fb7bd4efcd2b001148427/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ed933529e1cc358902101166acf37904/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/2b00f6fb4ae0b0d9c0c1fbee1ca75c8c/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/fc374368ab31e2df7fb64aaaa86798ec/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/a4776ec1ee3fefe929a77c89ca9afdc7/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/40d3c2c84f431b38a3282fc55a2a71d5/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/17b9db328765722aed25553b2f688651/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/8cf22a1ebec2cad03cef8ecdde97c0bf/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ec22101e6c3d03b71c714d1ae1fd7b9c/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/76e5e9f531b054e469ccebc0c786a5d3/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/0c9c2a31d3ced30de20c7fa20f34e2b6/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/f008174ec796271a997b3dc6741d32f7/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/16c3a7fc9a30921a2e3db8965e309396/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/44f6f3d50efceed1b1cd6c03e84ffbb1/core-1.3.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/8cb29fca76cfa989ce5b416d9ba4d541/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/cc5a923faf4ba91f54c1ab5f43c88cdd/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6d32f73ff7278fea3ea6f085e61aabad/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/63c4064e68c4602d6384f93bfbe1a00c/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/a9f3bc36571f06e83a7f04218e16bc2e/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/46fae251844228d42809f404fccf75b9/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/377329b9c03cd9180fa90997d45265eb/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/3d2b714264d5a45b96ab4473dafbf957/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ee16b3b5efcad0d2575d3ba4e991ef5c/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6b370d6e188c756af8a0e40213069ba4/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/abdc7ec3a4c940484935c0ecfb6707ab/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/f9a571e390bfe1e8f6ca4ff964ff5bcb/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/0e1bc4c09fcd8f4305ecb5c3ad0c2647/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/2fe055a9c2f5ec0773f38b698e701023/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:2:5-40
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:1-49:12
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.CAMERA
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:10:5-65
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-65
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:10:22-62
+application
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:12:5-48:19
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-11:19
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-11:19
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/24552db6d76704c222f224f7b71bd079/jetified-zxing-1.9.13/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/24552db6d76704c222f224f7b71bd079/jetified-zxing-1.9.13/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/34e67bb5a31f9ffa82bcc0a1fb36e7c5/jetified-core-1.9.13/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/34e67bb5a31f9ffa82bcc0a1fb36e7c5/jetified-core-1.9.13/AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.material:material:1.2.1] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/07f48808c7ba6697daeb0eff8761a086/material-1.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.2.1] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/07f48808c7ba6697daeb0eff8761a086/material-1.2.1/AndroidManifest.xml:22:5-20
+MERGED from [androidx.core:core:1.3.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/44f6f3d50efceed1b1cd6c03e84ffbb1/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/44f6f3d50efceed1b1cd6c03e84ffbb1/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6b370d6e188c756af8a0e40213069ba4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6b370d6e188c756af8a0e40213069ba4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/44f6f3d50efceed1b1cd6c03e84ffbb1/core-1.3.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:14:9-32
+	android:roundIcon
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:15:9-54
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:13:9-57
+activity#com.codemobiles.my_qrcode.MainActivity
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:17:9-35:20
+	android:launchMode
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:19:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:22:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:23:13-55
+	android:configChanges
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:21:13-144
+	android:theme
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:20:13-47
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:18:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:28:13-30:40
+	android:value
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:30:17-37
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:29:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:31:13-34:29
+action#android.intent.action.MAIN
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:32:17-68
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:32:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:33:17-76
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:33:27-74
+provider#androidx.core.content.FileProvider
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:38:9-46:20
+	android:grantUriPermissions
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:42:13-47
+	android:authorities
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:40:13-50
+	android:exported
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:39:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:43:13-45:54
+	android:resource
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:45:17-51
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml:44:17-67
+uses-sdk
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/24552db6d76704c222f224f7b71bd079/jetified-zxing-1.9.13/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/24552db6d76704c222f224f7b71bd079/jetified-zxing-1.9.13/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/34e67bb5a31f9ffa82bcc0a1fb36e7c5/jetified-core-1.9.13/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/34e67bb5a31f9ffa82bcc0a1fb36e7c5/jetified-core-1.9.13/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/df02db549fcc7e46355098be64ade42f/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/df02db549fcc7e46355098be64ade42f/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [:shared_preferences] /Users/thisadee/Documents/my_qrcode/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /Users/thisadee/Documents/my_qrcode/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/thisadee/Documents/my_qrcode/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/thisadee/Documents/my_qrcode/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/85ba1909c0c886e684d554e365416ff5/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/85ba1909c0c886e684d554e365416ff5/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/3dbac3eadddaf4b0a370901ae2f2655e/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/3dbac3eadddaf4b0a370901ae2f2655e/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/96578e03ac7ba360f80d3981399a065a/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/96578e03ac7ba360f80d3981399a065a/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.1] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/07f48808c7ba6697daeb0eff8761a086/material-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.1] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/07f48808c7ba6697daeb0eff8761a086/material-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/4294b64d0372e37107d94a132048e96e/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/4294b64d0372e37107d94a132048e96e/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/820df340371732d16f6265a6e86c86e7/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/820df340371732d16f6265a6e86c86e7/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/101fe5047326e1e5da5cc58ba902d464/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/101fe5047326e1e5da5cc58ba902d464/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/5c0fb4a12d6bd357af2fcd633cf0fc12/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/5c0fb4a12d6bd357af2fcd633cf0fc12/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/753600ec9b0fb7bd4efcd2b001148427/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/753600ec9b0fb7bd4efcd2b001148427/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ed933529e1cc358902101166acf37904/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ed933529e1cc358902101166acf37904/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/2b00f6fb4ae0b0d9c0c1fbee1ca75c8c/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/2b00f6fb4ae0b0d9c0c1fbee1ca75c8c/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/fc374368ab31e2df7fb64aaaa86798ec/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/fc374368ab31e2df7fb64aaaa86798ec/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/a4776ec1ee3fefe929a77c89ca9afdc7/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/a4776ec1ee3fefe929a77c89ca9afdc7/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/40d3c2c84f431b38a3282fc55a2a71d5/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/40d3c2c84f431b38a3282fc55a2a71d5/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/17b9db328765722aed25553b2f688651/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/17b9db328765722aed25553b2f688651/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/8cf22a1ebec2cad03cef8ecdde97c0bf/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/8cf22a1ebec2cad03cef8ecdde97c0bf/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ec22101e6c3d03b71c714d1ae1fd7b9c/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ec22101e6c3d03b71c714d1ae1fd7b9c/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/76e5e9f531b054e469ccebc0c786a5d3/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/76e5e9f531b054e469ccebc0c786a5d3/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/0c9c2a31d3ced30de20c7fa20f34e2b6/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/0c9c2a31d3ced30de20c7fa20f34e2b6/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/f008174ec796271a997b3dc6741d32f7/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/f008174ec796271a997b3dc6741d32f7/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/16c3a7fc9a30921a2e3db8965e309396/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/16c3a7fc9a30921a2e3db8965e309396/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/44f6f3d50efceed1b1cd6c03e84ffbb1/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/44f6f3d50efceed1b1cd6c03e84ffbb1/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/8cb29fca76cfa989ce5b416d9ba4d541/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/8cb29fca76cfa989ce5b416d9ba4d541/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/cc5a923faf4ba91f54c1ab5f43c88cdd/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/cc5a923faf4ba91f54c1ab5f43c88cdd/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6d32f73ff7278fea3ea6f085e61aabad/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6d32f73ff7278fea3ea6f085e61aabad/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/63c4064e68c4602d6384f93bfbe1a00c/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/63c4064e68c4602d6384f93bfbe1a00c/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/a9f3bc36571f06e83a7f04218e16bc2e/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/a9f3bc36571f06e83a7f04218e16bc2e/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/46fae251844228d42809f404fccf75b9/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/46fae251844228d42809f404fccf75b9/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/377329b9c03cd9180fa90997d45265eb/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/377329b9c03cd9180fa90997d45265eb/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/3d2b714264d5a45b96ab4473dafbf957/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/3d2b714264d5a45b96ab4473dafbf957/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ee16b3b5efcad0d2575d3ba4e991ef5c/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/ee16b3b5efcad0d2575d3ba4e991ef5c/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6b370d6e188c756af8a0e40213069ba4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/6b370d6e188c756af8a0e40213069ba4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/abdc7ec3a4c940484935c0ecfb6707ab/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/abdc7ec3a4c940484935c0ecfb6707ab/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/f9a571e390bfe1e8f6ca4ff964ff5bcb/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/f9a571e390bfe1e8f6ca4ff964ff5bcb/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/0e1bc4c09fcd8f4305ecb5c3ad0c2647/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/0e1bc4c09fcd8f4305ecb5c3ad0c2647/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/2fe055a9c2f5ec0773f38b698e701023/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/thisadee/.gradle/caches/transforms-2/files-2.1/2fe055a9c2f5ec0773f38b698e701023/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/thisadee/Documents/my_qrcode/android/app/src/debug/AndroidManifest.xml:6:22-64
+activity#de.mintware.barcode_scan.BarcodeScannerActivity
+ADDED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-84
+	android:name
+		ADDED from [:barcode_scan] /Users/thisadee/Documents/my_qrcode/build/barcode_scan/intermediates/library_manifest/debug/AndroidManifest.xml:10:19-81

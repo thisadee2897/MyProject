@@ -1,0 +1,470 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "asn1lib",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/asn1lib-0.6.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "async",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/async-2.5.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "barcode_scan",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/barcode_scan-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "basic_utils",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/basic_utils-2.6.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "boolean_selector",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "characters",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/characters-1.1.0-nullsafety.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "charcode",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "clock",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0-nullsafety.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.17"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/crypto-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "csslib",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/csslib-0.16.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "cupertino_icons",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "dart_mssql",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/dart_mssql-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "fake_async",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/ffi-0.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/file-5.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "fixnum",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "flutter",
+      "rootUri": "file:///Users/thisadee/Library/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "flutter_calendar_carousel",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/flutter_calendar_carousel-1.4.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "flutter_test",
+      "rootUri": "file:///Users/thisadee/Library/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/thisadee/Library/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/html-0.14.0+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/json_annotation-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/logging-0.11.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "matcher",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.10-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "meta",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/meta-1.3.0-nullsafety.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/path-1.8.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "path_provider",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.18",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-0.0.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_macos",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-0.0.4+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/platform-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.24"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "pointycastle",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/pointycastle-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "0.8"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/process-3.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "protobuf",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/protobuf-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "qr",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/qr-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "qr_flutter",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/qr_flutter-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "random_string",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/random_string-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "recase",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/recase-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.20"
+    },
+    {
+      "name": "shared_preferences",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_linux",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_macos",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+10",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_platform_interface",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/shared_preferences_platform_interface-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_web",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_windows",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-0.0.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "simple_gesture_detector",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/simple_gesture_detector-0.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "sky_engine",
+      "rootUri": "file:///Users/thisadee/Library/flutter/bin/cache/pkg/sky_engine",
+      "packageUri": "lib/",
+      "languageVersion": "1.11"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "sql_recase",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/sql_recase-0.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "sql_result",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/sql_result-0.2.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "sql_utils",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/sql_utils-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "stack_trace",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "stream_channel",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "string_utils",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/string_utils-0.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "syncfusion_flutter_calendar",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_calendar-18.3.38",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "syncfusion_flutter_core",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-18.3.38",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "syncfusion_flutter_datepicker",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_datepicker-18.3.38-beta",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "table_calendar",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/table_calendar-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "test_api",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.19-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "timezone",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/timezone-0.5.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.0-nullsafety.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "validate",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/validate-1.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "validators",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/validators-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "vector_math",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0-nullsafety.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "vin_decoder",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/vin_decoder-0.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "win32",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/win32-1.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///Users/thisadee/.pub-cache/hosted/pub.dartlang.org/xdg_directories-0.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "my_qrcode",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    }
+  ],
+  "generated": "2020-10-09T15:49:21.582520Z",
+  "generator": "pub",
+  "generatorVersion": "2.11.0-186.0.dev"
+}
