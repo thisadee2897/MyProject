@@ -40,7 +40,7 @@ class _EditMyProflieState extends State<EditMyProflie> {
                     filled: true,
                     icon: Icon(Icons.person),
                     hintText: 'กรอกชื่อจริงไม่ต้องใส่คำนำหน้า',
-                    labelText: 'ขื่่อจริง',
+                    labelText: 'ขื่อจริง',
                   ),
                   onSaved: (String value) {
                     this.f_name = value;

@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_qrcode/Page/activitted.dart';
-
+import 'package:my_qrcode/Page/activitypeport.dart';
+import 'package:my_qrcode/Page/reportdata.dart';
 
 import 'Home/home_admin.dart';
 import 'Home/home_student.dart';
@@ -55,9 +55,10 @@ class MyApp extends StatelessWidget {
     '/home_student': (context) => HomeStudent(),
     '/signup': (context) => AddStudent(),
     '/scan': (context) => Scan(),
-    '/calendar' : (context) => calendar(),
-    '/activitted' : (context) => Activitted(),
-
+    '/calendar': (context) => calendar(),
+    '/activitted': (context) => Activitted(),
+    '/reportactivity': (context) => Report(),
+    '/reportdata': (context) => ReportData(),
   };
   @override
   Widget build(BuildContext context) {

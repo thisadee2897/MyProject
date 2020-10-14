@@ -3,9 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_qrcode/Page/program.dart';
 import 'package:http/http.dart' as http;
-import 'package:my_qrcode/update/update_program.dart';
 
 class Activitted extends StatefulWidget {
   @override
@@ -15,7 +13,7 @@ class Activitted extends StatefulWidget {
 class _ActivittedState extends State<Activitted> {
   Future<List> getData() async {
     final response = await http.get(
-      "https://o.sppetchz.com/project/getdataprogram.php",
+      "https://o.sppetchz.com/project/getdataactivitys.php",
     );
 
     return json.decode(response.body);
@@ -41,12 +39,12 @@ class _ActivittedState extends State<Activitted> {
       appBar: AppBar(
         title: Text("กิจกรรมของฉัน"),
       ),
-
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
+      body: RefreshIndicator(
+        key: refreshKey,
+        onRefresh: refreshList,
+        child: SafeArea(
+          child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
                   child: Center(
@@ -84,60 +82,59 @@ class _ActivittedState extends State<Activitted> {
                   ),
                 ),
                 Container(
-                  color: Colors.redAccent,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                  height: 40,
+                  color: Colors.blue,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "กิจกรรม",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
                       Container(
-                        height: 40,
-                        color: Colors.amber,
+                        width: 150,
+                        alignment: Alignment.center,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Expanded(
-                              child: Container(
-                                alignment: Alignment.center,
-                                color: Colors.deepOrangeAccent,
-                                child: Text(
-                                  "ชื่อกิจกรรม",
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
+                            Text(
+                              ('ประเภท'),
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-                            Container(
-                              width: 150,
-                              alignment: Alignment.center,
-                              color: Colors.green,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Text(
-                                    "ประเภท",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    "หน่วย",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
+                            Text(
+                              ("หน่วย"),
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                       ),
-                      Container(
-                        ///ใส่ข้อมูลตรงนี้
-                      ),
                     ],
+                  ),
+                ),
+                Container(
+                  height: 2500,
+                  child: new FutureBuilder<List>(
+                    future: getData(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) print(snapshot.error);
+                      return snapshot.hasData
+                          ? new buildROW(
+                              list: snapshot.data,
+                            )
+                          : new Center(
+                              child: new CircularProgressIndicator(),
+                            );
+                    },
                   ),
                 ),
               ],
@@ -145,6 +142,69 @@ class _ActivittedState extends State<Activitted> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class buildROW extends StatelessWidget {
+  List list;
+  buildROW({this.list});
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: list == null ? 0 : list.length,
+      itemBuilder: (context, i) {
+        return Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(color: Colors.grey.shade400),
+            ),
+          ),
+          height: 40,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      list[i]['act_name'],
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: 150,
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      (list[i]['type']),
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      (list[i]['type']),
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

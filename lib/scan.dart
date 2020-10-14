@@ -1,81 +1,75 @@
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 class Scan extends StatefulWidget {
+  final String username;
+
+  Scan({Key key, @required this.username}) : super(key: key);
+
   @override
   _ScanState createState() => _ScanState();
 }
 
 class _ScanState extends State<Scan> {
+  String qrCodeResult = "Not Yet Scanned";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("scan"),
+        title: Text("Scanner"),
+        centerTitle: true,
       ),
-      body: Center(child: _buildScan(context: context),),
-    );
-  }
-  _buildScan({BuildContext context}) => Expanded(
-    flex: 1,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Image.asset(
-          "assets/ic_scan_qrcode.png",
-          width: 110,
-          height: 110,
-        ),
-        SizedBox(
-          height: 15,
-        ),
-        RaisedButton(
-          color: Colors.blue,
-          textColor: Colors.white,
-          child: Text("SCAN"),
-          onPressed: () {
-            scanQRCode(context: context);
-          },
-        )
-      ],
-    ),
-  );
-  Future scanQRCode({BuildContext context}) async {
-    try {
-      ScanResult barcode = await BarcodeScanner.scan();
-      showAlertDialog(result: barcode.rawContent, context: context);
-    } on PlatformException catch (exception) {
-      if (exception.code == BarcodeScanner.cameraAccessDenied) {
-        showAlertDialog(
-            result: 'not grant permission to open the camera',
-            context: context);
-      } else {
-        print('Unknown error: $exception');
-      }
-    } catch (exception) {
-      print('Unknown error: $exception');
-    }
-  }
-  showAlertDialog({BuildContext context, String result}) {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Result"),
-          content: Text(result),
-          actions: <Widget>[
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              qrCodeResult,
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
             FlatButton(
-              onPressed: () {
-                Navigator.of(context).pop();
+              padding: EdgeInsets.all(15.0),
+              onPressed: () async {
+                String codeSanner =
+                    (await BarcodeScanner.scan()) as String; //barcode scnner
+                setState(() {
+                  qrCodeResult = codeSanner;
+                  sendScan(qrCodeResult);
+                });
               },
-              child: Text("Close"),
+              child: Text(
+                "SCAN QR CODE",
+                style:
+                    TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+              ),
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.blue, width: 3.0),
+                  borderRadius: BorderRadius.circular(20.0)),
             )
           ],
-        );
+        ),
+      ),
+    );
+  }
+
+  void sendScan(String qrCodeResult) {
+    print(widget.username);
+    var url = "https://o.sppetchz.com/project/InsertScan.php";
+    http.post(
+      url,
+      body: {
+        "id_act": qrCodeResult,
+        "username": widget.username,
       },
     );
   }

@@ -60,7 +60,7 @@ class _homeState extends State<home> {
               CustomListTitle(
                 Icons.bug_report,
                 'รายงานผลการเข้าร่วมกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/activitys')},
+                    () => {Navigator.pushNamed(context, '/reportactivity')},
               ),
               CustomListTitle(
                 Icons.bug_report,
