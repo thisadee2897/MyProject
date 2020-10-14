@@ -1,4 +1,4 @@
-#Fri Oct 09 22:50:18 ICT 2020
+#Wed Oct 14 22:53:06 ICT 2020
 base.0=/Users/thisadee/Documents/my_qrcode/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
