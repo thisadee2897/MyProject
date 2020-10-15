@@ -16,6 +16,12 @@ class Activitted extends StatefulWidget {
 }
 
 class _ActivittedState extends State<Activitted> {
+  double percentageHeight(num percentage) {
+    MediaQueryData media = MediaQuery.of(this.context);
+    double availableHeight = media.size.height - media.padding.top;
+
+    return availableHeight * percentage / 100;
+  }
   GlobalKey globalKey = GlobalKey();
   Future<List> getData() async {
     final response = await http.get(
@@ -152,11 +158,8 @@ class _ActivittedState extends State<Activitted> {
                   key: refreshKey,
                   onRefresh: refreshList,
                   child: Container(
-                    padding: EdgeInsets.only(left: 4.0, right: 4.0),
-                    color: Colors.blue,
-                    height: 500,
-                    // height: double.maxFinite,
-                    width: double.infinity,
+                    color: Colors.black,
+                    height: percentageHeight(60),
                     child: new FutureBuilder<List>(
                       future: getData(),
                       builder: (context, snapshot) {

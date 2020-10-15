@@ -123,7 +123,7 @@ class buildROW extends StatelessWidget {
         return ListTile(
           title: Row(
             children: <Widget>[
-              Text(list[i]['act_name']),
+              Text(list[i]['act_name'],overflow: TextOverflow.ellipsis,),
             ],
           ),
           subtitle: Column(
