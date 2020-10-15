@@ -46,7 +46,6 @@ class _ActivittedState extends State<Activitted> {
       appBar: AppBar(
         title: Text("กิจกรรมของฉัน"),
         actions: <Widget>[
-
           Row(
             children: [
               SizedBox(width: 10),
@@ -55,126 +54,125 @@ class _ActivittedState extends State<Activitted> {
           ),
         ],
       ),
-      body: RefreshIndicator(
-        key: refreshKey,
-        onRefresh: refreshList,
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: RepaintBoundary(
-              key: globalKey,
-              child: Expanded(
-                child: Column(
-                  children: [
-                    Container(
-                      color: Colors.blue,
-                      child: Center(
-                        child: Column(
+      body: SafeArea(
+        child: RepaintBoundary(
+          key: globalKey,
+          child: Expanded(
+            child: Column(
+              children: [
+                Container(
+                  color: Colors.blue,
+                  child: Center(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Center(
+                          child: Text(
+                            "60522110042-2",
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        Center(
+                          child: Text(
+                            "124",
+                            style: TextStyle(
+                                fontSize: 52,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        Center(
+                          child: Text(
+                            "หน่วย",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 40,
+                  color: Colors.blue.shade800,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "กิจกรรม",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 150,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            SizedBox(
-                              height: 20,
+                            Text(
+                              ('ประเภท'),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
-                            Center(
-                              child: Text(
-                                "60522110042-2",
-                                style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
+                            Text(
+                              ("หน่วย"),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
-                            Center(
-                              child: Text(
-                                "124",
-                                style: TextStyle(
-                                    fontSize: 52,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                            Center(
-                              child: Text(
-                                "หน่วย",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            )
                           ],
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 40,
-                      color: Colors.blue.shade800,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "กิจกรรม",
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 150,
-                            alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  ('ประเภท'),
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                                Text(
-                                  ("หน่วย"),
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      color: Colors.blue,
-                      height: 1000,
-                      // height: double.maxFinite,
-                      width: double.infinity,
-                      child: new FutureBuilder<List>(
-                        future: getData(),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasError) print(snapshot.error);
-                          return snapshot.hasData
-                              ? new buildROW(
-                                  list: snapshot.data,
-                                )
-                              : new Center(
-                                  child: new CircularProgressIndicator(),
-                                );
-                        },
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+                RefreshIndicator(
+                  key: refreshKey,
+                  onRefresh: refreshList,
+                  child: Container(
+                    padding: EdgeInsets.only(left: 4.0, right: 4.0),
+                    color: Colors.blue,
+                    height: 500,
+                    // height: double.maxFinite,
+                    width: double.infinity,
+                    child: new FutureBuilder<List>(
+                      future: getData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasError) print(snapshot.error);
+                        return snapshot.hasData
+                            ? new buildROW(
+                                list: snapshot.data,
+                              )
+                            : new Center(
+                                child: new CircularProgressIndicator(),
+                              );
+                      },
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
