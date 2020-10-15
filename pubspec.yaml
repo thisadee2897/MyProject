@@ -34,6 +34,7 @@ dependencies:
   flutter_calendar_carousel: ^1.4.12
   table_calendar: ^2.2.3
   syncfusion_flutter_calendar: ^18.3.35
+  pdf: ^1.11.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

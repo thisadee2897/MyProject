@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
+import 'Home/home_student.dart';
 import 'constant.dart';
 
 class Login extends StatefulWidget {
@@ -10,9 +10,12 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
+var _user;
+
 class _LoginState extends State<Login> {
   TextEditingController username = new TextEditingController();
   TextEditingController password = new TextEditingController();
+
   Future<List> _submits() async {
     final response = await http.post("https://o.sppetchz.com/project/login.php",
         body: {"username": username.text, "password": password.text});
@@ -27,46 +30,48 @@ class _LoginState extends State<Login> {
       } else if (datauser[0]['level'] == '2') {
         Navigator.pushReplacementNamed(context, '/home_student');
       } else if (datauser[0]['level'] == '3') {
-        Navigator.pushReplacementNamed(context, '/home_student');
+        // Navigator.pushReplacementNamed(context, '/home_student');
       } else if (datauser[0]['level'] == '4') {
-        Navigator.pushReplacementNamed(context, '/home_student');
+        setState(
+              () {
+            _user = username.text;
+            //  print(_user);
+          },
+        );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeStudent(username: _user),
+          ),
+        );
       }
       setState(() {
         username = datauser[0]['username'];
       });
     }
-    /*return datauser;*/
   }
 
   bool _rememberMe = false;
   final _formKey = GlobalKey<FormState>();
   FocusNode passwordFocusNode = FocusNode();
+
   Widget _buildEmailTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          height: 60.0,
-          child: TextField(
-            controller: username,
-            keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: 'OpenSans',
-            ),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.email,
-                color: Colors.white,
-              ),
-              hintText: 'Enter your Email',
-              hintStyle: kHintTextStyle,
-            ),
+        new TextFormField(
+          autofocus: true,
+          autovalidate: false,
+          controller: username,
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'OpenSans',
           ),
+          decoration: new InputDecoration(
+            labelText: "username",
+            icon: Icon(Icons.account_circle),
+          ),
+          validator: _validateusername,
         ),
       ],
     );
@@ -108,29 +113,26 @@ class _LoginState extends State<Login> {
   }
 
   Widget _buildPasswordTF() {
-    return Container(
-      alignment: Alignment.centerLeft,
-      decoration: kBoxDecorationStyle,
-      height: 60.0,
-      child: TextField(
-        obscureText: true,
-        controller: password,
-        keyboardType: TextInputType.emailAddress,
-        style: TextStyle(
-          color: Colors.white,
-          fontFamily: 'OpenSans',
-        ),
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.only(top: 14.0),
-          prefixIcon: Icon(
-            Icons.lock,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        new TextFormField(
+          cursorColor: Colors.white,
+          autofocus: true,
+          autovalidate: false,
+          controller: password,
+          style: TextStyle(
             color: Colors.white,
+            fontFamily: 'OpenSans',
           ),
-          hintText: 'Password',
-          hintStyle: kHintTextStyle,
+          obscureText: true,
+          decoration: new InputDecoration(
+            labelText: "password",
+            icon: Icon(Icons.lock),
+          ),
+          validator: _validatepassword,
         ),
-      ),
+      ],
     );
   }
 
@@ -267,7 +269,7 @@ class _LoginState extends State<Login> {
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'OpenSans',
-                            fontSize: 45.0,
+                            fontSize: 30.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

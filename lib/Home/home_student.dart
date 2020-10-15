@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HomeStudent extends StatefulWidget {
+  final String username;
+  HomeStudent({Key key, @required this.username}) : super(key: key);
   @override
   _HomeStudentState createState() => _HomeStudentState();
 }
 
 class _HomeStudentState extends State<HomeStudent> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
