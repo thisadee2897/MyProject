@@ -1,8 +1,8 @@
-import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -11,27 +11,46 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 class Activitted extends StatefulWidget {
+  final String username;
+
+  Activitted({Key key, @required this.username}) : super(key: key);
+
   @override
   _ActivittedState createState() => _ActivittedState();
 }
 
 class _ActivittedState extends State<Activitted> {
-  double percentageHeight(num percentage) {
-    MediaQueryData media = MediaQuery.of(this.context);
-    double availableHeight = media.size.height - media.padding.top;
-
-    return availableHeight * percentage / 100;
-  }
   GlobalKey globalKey = GlobalKey();
-  Future<List> getData() async {
-    final response = await http.get(
-      "https://o.sppetchz.com/project/getdataactivitys.php",
-    );
+  List<ActivityModel> listModel = [];
+  var sum = "0";
 
-    return json.decode(response.body);
+  Future<Null> getData() async {
+    var url = "https://o.sppetchz.com/project/selectActivity.php";
+    final response = await http.post(url, body: {"username": widget.username});
+    print(response.statusCode);
+    final data = jsonDecode(response.body);
+
+    setState(() {
+      for (Map map in data) {
+        listModel.add(ActivityModel.fromJson(map));
+      }
+      if (listModel.length != 0) {
+        print(listModel[listModel.length - 1].sum.toString());
+        sum = listModel[listModel.length - 1].sum.toString();
+      }
+    });
+  }
+
+  Future<List> getData2() async {
+    var url = "https://o.sppetchz.com/project/selectActivity.php";
+    final response = await http.post(url, body: {"username": widget.username});
+    print(response.statusCode);
+    final data = jsonDecode(response.body);
+    return data;
   }
 
   var refreshKey = GlobalKey<RefreshIndicatorState>();
+
   Future<Null> refreshList() async {
     refreshKey.currentState?.show(atTop: false);
     await Future.delayed(Duration(seconds: 1));
@@ -42,6 +61,8 @@ class _ActivittedState extends State<Activitted> {
 
   @override
   void initState() {
+    getData();
+    print(widget.username);
     super.initState();
     this.refreshList();
   }
@@ -50,118 +71,110 @@ class _ActivittedState extends State<Activitted> {
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
-        title: Text("กิจกรรมของฉัน"),
+        title: Text(widget.username),
         actions: <Widget>[
-          Row(
-            children: [
-              SizedBox(width: 10),
-              IconButton(icon: Icon(Icons.share), onPressed: shared),
-            ],
-          ),
+          IconButton(icon: Icon(Icons.share), onPressed: shared),
         ],
       ),
-      body: SafeArea(
-        child: RepaintBoundary(
-          key: globalKey,
-          child: Expanded(
-            child: Column(
-              children: [
-                Container(
-                  color: Colors.blue,
-                  child: Center(
-                    child: Column(
+      body: RefreshIndicator(
+        key: refreshKey,
+        onRefresh: refreshList,
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: RepaintBoundary(
+              key: globalKey,
+              child: Column(
+                children: [
+                  Container(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Center(
+                            child: Text(
+                              "หน่วยกิจสะสม",
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              sum,
+                              style: TextStyle(
+                                  fontSize: 52,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              "หน่วย",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    color: Colors.blue.shade800,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Center(
-                          child: Text(
-                            "60522110042-2",
-                            style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                        Expanded(
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "กิจกรรม",
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
-                        Center(
-                          child: Text(
-                            "124",
-                            style: TextStyle(
-                                fontSize: 52,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                        Container(
+                          width: 150,
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                ('ประเภท'),
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Text(
+                                ("หน่วย"),
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                            ],
                           ),
                         ),
-                        Center(
-                          child: Text(
-                            "หน่วย",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        )
                       ],
                     ),
                   ),
-                ),
-                Container(
-                  height: 40,
-                  color: Colors.blue.shade800,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "กิจกรรม",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 150,
-                        alignment: Alignment.center,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              ('ประเภท'),
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                            Text(
-                              ("หน่วย"),
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                RefreshIndicator(
-                  key: refreshKey,
-                  onRefresh: refreshList,
-                  child: Container(
-                    color: Colors.black,
-                    height: percentageHeight(60),
+                  Container(
+                    height: 600,
+                    // height: double.maxFinite,
+                    // width: double.infinity,
                     child: new FutureBuilder<List>(
-                      future: getData(),
+                      future: getData2(),
                       builder: (context, snapshot) {
                         if (snapshot.hasError) print(snapshot.error);
                         return snapshot.hasData
@@ -174,8 +187,8 @@ class _ActivittedState extends State<Activitted> {
                       },
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -202,8 +215,24 @@ class _ActivittedState extends State<Activitted> {
   }
 }
 
+class ActivityModel {
+  final String actName;
+  final String type;
+  final String unit;
+  final int sum;
+
+  ActivityModel(this.actName, this.type, this.unit, this.sum);
+
+  ActivityModel.fromJson(Map<String, dynamic> json)
+      : actName = json["act_name"],
+        type = json["damage"],
+        unit = json["unit"],
+        sum = json["sum"];
+}
+
 class buildROW extends StatefulWidget {
-  List list;
+  List list = [];
+
   buildROW({this.list});
 
   @override
@@ -251,7 +280,7 @@ class _buildROWState extends State<buildROW> {
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                     Text(
-                      (widget.list[i]['type']),
+                      (widget.list[i]['unit']),
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ],

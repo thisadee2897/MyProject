@@ -4,21 +4,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ReportData extends StatefulWidget {
-  // final List list;
-  // final int index;
-  //
-  // ReportData({
-  //   this.list,
-  //   this.index,
-  // });
+
+
+  final String idAct;
+  final int index;
+
+
+  ReportData({Key key, @required this.idAct, this.index}) : super(key: key);
+
   @override
   _ReportDataState createState() => _ReportDataState();
 }
 
 class _ReportDataState extends State<ReportData> {
+
   Future<List> getData() async {
-    final response =
-        await http.get("https://o.sppetchz.com/project/getdatastudent.php");
+    var url = "https://o.sppetchz.com/project/selectUsername.php";
+    final response = await http.post(url, body: {"id_act": widget.idAct});
+    print(response.statusCode);
+
     return json.decode(response.body);
   }
 
@@ -30,7 +34,11 @@ class _ReportDataState extends State<ReportData> {
 
     return null;
   }
-
+  @override
+  void initState() {
+    //print("test"+widget.idAct);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,11 +55,11 @@ class _ReportDataState extends State<ReportData> {
               if (snapshot.hasError) print(snapshot.error);
               return snapshot.hasData
                   ? new buildROW(
-                      list: snapshot.data,
-                    )
+                list: snapshot.data,
+              )
                   : new Center(
-                      child: new CircularProgressIndicator(),
-                    );
+                child: new CircularProgressIndicator(),
+              );
             },
           ),
         ),

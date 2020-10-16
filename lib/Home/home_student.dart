@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:my_qrcode/Page/activitted.dart';
+import 'package:my_qrcode/editemyprofile.dart';
+import 'package:my_qrcode/scan.dart';
 
 class HomeStudent extends StatefulWidget {
   final String username;
+
   HomeStudent({Key key, @required this.username}) : super(key: key);
+
   @override
   _HomeStudentState createState() => _HomeStudentState();
 }
 
 class _HomeStudentState extends State<HomeStudent> {
+  @override
+  void initState() {
+    //   print(widget.username);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,44 +38,59 @@ class _HomeStudentState extends State<HomeStudent> {
       body: SafeArea(
         child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ListView(children: <Widget>[
-              CustomListTitle(
-                Icons.data_usage,
-                'แก้ไขข้อมูลส่วนตัว',
-                    () => {Navigator.pushNamed(context, '/edit_myprofile')},
-              ),
-              CustomListTitle(
-                Icons.data_usage,
-                'เข้าร่วมกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/scan')},
-              ),
-              CustomListTitle(
-                Icons.data_usage,
-                'ผลการเข้าร่วมกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/activitted')},
-              ),
-              CustomListTitle(
-                Icons.data_usage,
-                'ปฏิทินกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/calendar')},
-              ),
-              CustomListTitle(
-                Icons.data_usage,
-                'เปลี่ยนรหัสผ่าน',
-                    () => {Navigator.pushNamed(context, '/changpassword')},
-              ),
-            ],)
-        ),
+            child: ListView(
+              children: <Widget>[
+                CustomListTitle(
+                  Icons.data_usage,
+                  'แก้ไขข้อมูลส่วนตัว',
+                      () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          EditMyProflie(username: widget.username),
+                    ),
+                  ),
+                ),
+                CustomListTitle(
+                  Icons.data_usage,
+                  'เข้าร่วมกิจกรรม',
+                      () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Scan(username: widget.username),
+                    ),
+                  ),
+                ),
+                CustomListTitle(
+                  Icons.data_usage,
+                  'ผลการเข้าร่วมกิจกรรม',
+                      () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          Activitted(username: widget.username),
+                    ),
+                  ),
+                ),
+                CustomListTitle(
+                  Icons.data_usage,
+                  'ปฏิทินกิจกรรม',
+                      () => {Navigator.pushNamed(context, '/calendar')},
+                ),
+              ],
+            )),
       ),
     );
   }
 }
+
 class CustomListTitle extends StatelessWidget {
   IconData icon;
   String text;
   Function onTap;
 
   CustomListTitle(this.icon, this.text, this.onTap);
+
   @override
   Widget build(BuildContext context) {
     //todo implemant build
