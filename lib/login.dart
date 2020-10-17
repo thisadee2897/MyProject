@@ -58,10 +58,10 @@ class _LoginState extends State<Login> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         new TextFormField(
-          autofocus: true,
+          keyboardType: TextInputType.emailAddress,
           controller: username,
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.blue,
             fontFamily: 'OpenSans',
           ),
           decoration: new InputDecoration(
@@ -114,11 +114,10 @@ class _LoginState extends State<Login> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         new TextFormField(
-          cursorColor: Colors.white,
-          autofocus: true,
+          keyboardType: TextInputType.emailAddress,
           controller: password,
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.blue,
             fontFamily: 'OpenSans',
           ),
           obscureText: true,
@@ -147,7 +146,7 @@ class _LoginState extends State<Login> {
         child: Text(
           'LOGIN',
           style: TextStyle(
-            color: Color(0xFF527DAA),
+            color: Colors.lightBlue,
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
@@ -200,19 +199,7 @@ class _LoginState extends State<Login> {
               Container(
                 height: double.infinity,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF73AEF5),
-                      Color(0xFF61A4F1),
-                      Color(0xFF478DE0),
-                      Color(0xFF398AE9),
-                    ],
-                    stops: [0.1, 0.4, 0.7, 0.9],
-                  ),
-                ),
+                color: Colors.blue,
               ),
               Container(
                 height: double.infinity,
@@ -237,13 +224,24 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         SizedBox(height: 30.0),
-                        _buildEmailTF(),
-                        SizedBox(
-                          height: 30.0,
-                        ),
-                        _buildPasswordTF(),
-                        SizedBox(
-                          height: 25,
+                        Card(
+                          color: Colors.white,
+                          elevation: 5.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(8, 8, 10, 25),
+                            child: Column(
+                              children: [
+                                _buildEmailTF(),
+                                SizedBox(
+                                  height: 30.0,
+                                ),
+                                _buildPasswordTF(),
+                              ],
+                            ),
+                          ),
                         ),
                         _buildLoginBtn(),
                         SizedBox(

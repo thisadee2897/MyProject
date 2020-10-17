@@ -55,39 +55,39 @@ class _AdminState extends State<Admin> {
             ],
           )
         ],
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50),
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  margin: const EdgeInsets.only(left: 12, bottom: 8),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(24.0),
-                  ),
-                  child: TextFormField(
-                    onChanged: (String text) {},
-                    controller: null,
-                    decoration: InputDecoration(
-                      hintText: "ค้นหา",
-                      contentPadding: const EdgeInsets.only(left: 24),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-              ),
-              IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    _search();
-                  })
-            ],
-          ),
-        ),
+        // bottom: PreferredSize(
+        //   preferredSize: Size.fromHeight(50),
+        //   child: Row(
+        //     children: <Widget>[
+        //       Expanded(
+        //         child: Container(
+        //           margin: const EdgeInsets.only(left: 12, bottom: 8),
+        //           decoration: BoxDecoration(
+        //             color: Colors.white,
+        //             borderRadius: BorderRadius.circular(24.0),
+        //           ),
+        //           child: TextFormField(
+        //             onChanged: (String text) {},
+        //             controller: null,
+        //             decoration: InputDecoration(
+        //               hintText: "ค้นหา",
+        //               contentPadding: const EdgeInsets.only(left: 24),
+        //               border: InputBorder.none,
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //       IconButton(
+        //           icon: Icon(
+        //             Icons.search,
+        //             color: Colors.white,
+        //           ),
+        //           onPressed: () {
+        //             _search();
+        //           })
+        //     ],
+        //   ),
+        // ),
       ),
       body: RefreshIndicator(
         key: refreshKey,

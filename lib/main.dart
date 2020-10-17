@@ -58,8 +58,10 @@ class MyApp extends StatelessWidget {
     '/update_subject': (context) => UpdateSubject(),
     '/update_program': (context) => UpdateProgram(),
     '/update_activity': (context) => UpdateActivity(),
+    // ignore: missing_required_param
     '/home_student': (context) => HomeStudent(),
     '/signup': (context) => AddStudent(),
+    // ignore: missing_required_param
     '/scan': (context) => Scan(),
     '/calendar': (context) => calendar(),
     '/activitted': (context) => Activitted(),

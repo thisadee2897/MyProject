@@ -2,22 +2,23 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_qrcode/Home/home_student.dart';
 
 class EditMyProflie extends StatefulWidget {
-
   final String username;
   EditMyProflie({Key key, @required this.username}) : super(key: key);
 
   @override
   _EditMyProflieState createState() => _EditMyProflieState();
 }
-class _EditMyProflieState extends State<EditMyProflie> {
 
+class _EditMyProflieState extends State<EditMyProflie> {
   SingleChildScrollView dataBody() {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
     );
   }
+
   var refreshKey = GlobalKey<RefreshIndicatorState>();
   Future<Null> refreshList() async {
     refreshKey.currentState?.show(atTop: false);
@@ -26,24 +27,35 @@ class _EditMyProflieState extends State<EditMyProflie> {
     return null;
   }
 
-
-  List<StudentsModel> listModel =[];
+  List<StudentsModel> listModel = [];
 
   TextEditingController controllerfirstname;
   TextEditingController controllerlastname;
   TextEditingController controllerid_card;
-
+  void editData() {
+    var url = "https://o.sppetchz.com/project/edithomestudent.php";
+    http.post(
+      url,
+      body: {
+        "id": widget.username,
+        "firstname": controllerfirstname.text,
+        "lastname": controllerlastname.text,
+        "id_card": controllerid_card.text,
+      },
+    ).then((response) {
+      print("Response status: ${response.statusCode}");
+      print("Response body: ${response.body}");
+    });
+  }
 
   Future<Null> getData() async {
     var url = "https://o.sppetchz.com/project/editpro.php";
-    final response =
-    await http.post(url,
-        body: {"username": widget.username});
+    final response = await http.post(url, body: {"username": widget.username});
     print(response.statusCode);
     final data = jsonDecode(response.body);
 
     setState(() {
-      for(Map map in data){
+      for (Map map in data) {
         listModel.add(StudentsModel.fromJson(map));
       }
       //print("test" +listModel[0].fName);
@@ -52,6 +64,44 @@ class _EditMyProflieState extends State<EditMyProflie> {
       controllerid_card = new TextEditingController(text: listModel[0].idCard);
     });
   }
+
+  final formKey = new GlobalKey<FormState>();
+  void _submit() {
+    final form = formKey.currentState;
+    if (form.validate()) {
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Row(
+              children: [
+                Text("ข้อมูลของ"),
+                Text(widget.username),
+              ],
+            ),
+            content: Text("แก้ไขข้อมูลเรียบร้อยแล้ว"),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  editData();
+                  Navigator.pop(context);
+                  Navigator.of(context).pop(
+                    new MaterialPageRoute(
+                      builder: (BuildContext context) => new HomeStudent(),
+                    ),
+                  );
+                },
+                child: Text("ยืนยัน"),
+              ),
+            ],
+          );
+        },
+      );
+    }
+    return null;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -62,13 +112,12 @@ class _EditMyProflieState extends State<EditMyProflie> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("แก้ไขข้อมูลส่วนตัว"),
+        title: Text(widget.username),
       ),
       body: RefreshIndicator(
         key: refreshKey,
         onRefresh: refreshList,
         child: Container(
-
           child: SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -127,7 +176,29 @@ class _EditMyProflieState extends State<EditMyProflie> {
                       //this.id_card = value;
                     },
                   ),
-                  _buildLoginBtn(),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 25.0),
+                    width: double.infinity,
+                    child: RaisedButton(
+                      elevation: 5.0,
+                      onPressed: _submit,
+                      padding: EdgeInsets.all(15.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      color: Colors.white,
+                      child: Text(
+                        'OK',
+                        style: TextStyle(
+                          color: Color(0xFF527DAA),
+                          letterSpacing: 1.5,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'OpenSans',
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -138,49 +209,14 @@ class _EditMyProflieState extends State<EditMyProflie> {
   }
 }
 
-
-class StudentsModel{
+class StudentsModel {
   final String fName;
   final String lName;
   final String idCard;
   StudentsModel(this.fName, this.lName, this.idCard);
 
-  StudentsModel.fromJson(Map<String,dynamic> json):
-        fName=json["firstname"],
-        lName=json["lastname"],
-        idCard=json["id_card"];
+  StudentsModel.fromJson(Map<String, dynamic> json)
+      : fName = json["firstname"],
+        lName = json["lastname"],
+        idCard = json["id_card"];
 }
-
-
-
-Widget _buildLoginBtn() {
-  return Container(
-    padding: EdgeInsets.symmetric(vertical: 25.0),
-    width: double.infinity,
-    child: RaisedButton(
-      elevation: 5.0,
-      onPressed: () {},
-      padding: EdgeInsets.all(15.0),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-      ),
-      color: Colors.white,
-      child: Text(
-        'OK',
-        style: TextStyle(
-          color: Color(0xFF527DAA),
-          letterSpacing: 1.5,
-          fontSize: 18.0,
-          fontWeight: FontWeight.bold,
-          fontFamily: 'OpenSans',
-        ),
-      ),
-    ),
-  );
-}
-
-
-
-
-
-

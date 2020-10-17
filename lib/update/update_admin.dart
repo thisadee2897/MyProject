@@ -67,7 +67,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text("ข้อมูลของ..."),
-            content: Text("เพิ่มข้อมูลเรียบร้อยแล้ว"),
+            content: Text("แก้ไขข้อมูลเรียบร้อยแล้ว"),
             actions: <Widget>[
               FlatButton(
                 onPressed: () {

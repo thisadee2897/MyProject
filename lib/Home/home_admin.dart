@@ -11,9 +11,9 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("สวัสดี SAY HAI"),
+        title: Text("ระบบกิจกรรมนักศึกษา"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.exit_to_app),
@@ -32,47 +32,47 @@ class _homeState extends State<home> {
               CustomListTitle(
                 Icons.data_usage,
                 'จัดการข้อมูลนักศึกษา',
-                    () => {Navigator.pushNamed(context, '/student')},
+                () => {Navigator.pushNamed(context, '/student')},
               ),
               CustomListTitle(
                 Icons.account_circle,
                 'จัดการข้อมูลผู้ดูแลระบบ',
-                    () => {Navigator.pushNamed(context, '/admin')},
+                () => {Navigator.pushNamed(context, '/admin')},
               ),
               CustomListTitle(
                 Icons.card_travel,
                 'จัดการข้อมูลสาขา',
-                    () => {Navigator.pushNamed(context, '/section')},
+                () => {Navigator.pushNamed(context, '/section')},
               ),
               CustomListTitle(
                 Icons.assignment,
                 'จัดการข้อมูลโปรแกรม',
-                    () => {Navigator.pushNamed(context, '/program')},
+                () => {Navigator.pushNamed(context, '/program')},
               ),
               CustomListTitle(
-                Icons.bug_report,
+                Icons.account_tree_outlined,
                 'จัดการข้อมูลกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/activitys')},
+                () => {Navigator.pushNamed(context, '/activitys')},
               ),
               CustomListTitle(
-                Icons.bug_report,
+                Icons.calendar_today,
                 'ปฏิทินกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/calendar')},
+                () => {Navigator.pushNamed(context, '/calendar')},
               ),
               CustomListTitle(
-                Icons.bug_report,
+                Icons.workspaces_outline,
                 'รายงานผลการเข้าร่วมกิจกรรม',
-                    () => {Navigator.pushNamed(context, '/reportactivity')},
+                () => {Navigator.pushNamed(context, '/reportactivity')},
               ),
               CustomListTitle(
-                Icons.bug_report,
+                Icons.qr_code_scanner_rounded,
                 'สร้าง คิวอาโค๊ต กิจกรรม',
-                    () => {Navigator.pushNamed(context, '/add_qrcode')},
+                () => {Navigator.pushNamed(context, '/add_qrcode')},
               ),
               CustomListTitle(
                 Icons.settings,
                 'เปลี่ยนรหัสผ่าน',
-                    () => {Navigator.pushNamed(context, '/changpassword')},
+                () => {Navigator.pushNamed(context, '/changpassword')},
               ),
             ],
           ),
@@ -98,7 +98,6 @@ class CustomListTitle extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey.shade400))),
         child: InkWell(
-          splashColor: Colors.blue,
           onTap: onTap,
           child: Container(
             height: 66,
@@ -107,17 +106,23 @@ class CustomListTitle extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Icon(icon),
+                    Icon(
+                      icon,
+                      color: Colors.white,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         text,
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
                   ],
                 ),
-                Icon(Icons.chevron_right),
+                Icon(
+                  Icons.chevron_right,
+                  color: Colors.white,
+                ),
               ],
             ),
           ),

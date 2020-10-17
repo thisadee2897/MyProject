@@ -22,6 +22,7 @@ class _HomeStudentState extends State<HomeStudent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         title: Text("สวัสดีนักศึกษา"),
         actions: <Widget>[
@@ -41,7 +42,7 @@ class _HomeStudentState extends State<HomeStudent> {
             child: ListView(
               children: <Widget>[
                 CustomListTitle(
-                  Icons.data_usage,
+                  Icons.settings_rounded,
                   'แก้ไขข้อมูลส่วนตัว',
                       () => Navigator.push(
                     context,
@@ -52,7 +53,7 @@ class _HomeStudentState extends State<HomeStudent> {
                   ),
                 ),
                 CustomListTitle(
-                  Icons.data_usage,
+                  Icons.qr_code_outlined,
                   'เข้าร่วมกิจกรรม',
                       () => Navigator.push(
                     context,
@@ -62,7 +63,7 @@ class _HomeStudentState extends State<HomeStudent> {
                   ),
                 ),
                 CustomListTitle(
-                  Icons.data_usage,
+                  Icons.apartment,
                   'ผลการเข้าร่วมกิจกรรม',
                       () => Navigator.push(
                     context,
@@ -73,7 +74,7 @@ class _HomeStudentState extends State<HomeStudent> {
                   ),
                 ),
                 CustomListTitle(
-                  Icons.data_usage,
+                  Icons.calendar_today,
                   'ปฏิทินกิจกรรม',
                       () => {Navigator.pushNamed(context, '/calendar')},
                 ),
@@ -109,17 +110,17 @@ class CustomListTitle extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Icon(icon),
+                    Icon(icon,color: Colors.white,),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         text,
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 18,color: Colors.white),
                       ),
                     ),
                   ],
                 ),
-                Icon(Icons.chevron_right),
+                Icon(Icons.chevron_right,color: Colors.white,),
               ],
             ),
           ),

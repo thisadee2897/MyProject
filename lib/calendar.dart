@@ -9,12 +9,13 @@ class calendar extends StatefulWidget {
   @override
   _calendarState createState() => _calendarState();
 }
+
 class _calendarState extends State<calendar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Calandar"),
+        title: Text("ปฎิทินกิจกรรม"),
       ),
       body: OnlineJsonData(),
     );
@@ -27,9 +28,10 @@ class OnlineJsonData extends StatefulWidget {
 }
 
 class CalendarExample extends State<OnlineJsonData> {
+  DateTime myDateTime = DateTime.now();
+
   List<Color> _colorCollection;
   String _networkStatusMsg;
-
   @override
   void initState() {
     _initializeEventColor();
@@ -38,20 +40,20 @@ class CalendarExample extends State<OnlineJsonData> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
 
+    return new Scaffold(
       body: Container(
         child: FutureBuilder(
           future: getDataFromWeb(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
-
-            DateTime now = new DateTime.now();
+            DateTime myDateTime = DateTime.now();
             if (snapshot.data != null) {
               return SafeArea(
                 child: Container(
                   child: SfCalendar(
                     view: CalendarView.month,
-                    initialDisplayDate: DateTime(now.year, now.month, now.day, 0, 0, 0),
+                    initialDisplayDate: DateTime(myDateTime.year,
+                        myDateTime.month, myDateTime.day, 0, 0, 0),
                     dataSource: MeetingDataSource(snapshot.data),
                     monthViewSettings: MonthViewSettings(
                       showAgenda: true,
@@ -74,14 +76,13 @@ class CalendarExample extends State<OnlineJsonData> {
   }
 
   Future<List<Meeting>> getDataFromWeb() async {
-    var data = await http.get(
-        "https://o.sppetchz.com/project/getdataactivitys.php");
+    var data =
+        await http.get("https://o.sppetchz.com/project/getdataactivitys.php");
     var jsonData = json.decode(data.body);
 
     final List<Meeting> appointmentData = [];
     final Random random = new Random();
     for (var data in jsonData) {
-
       Meeting meetingData = Meeting(
           eventName: data['act_name'],
           from: _convertDateFromString(
@@ -148,11 +149,11 @@ class MeetingDataSource extends CalendarDataSource {
 class Meeting {
   Meeting(
       {this.eventName,
-        //this.act_name,
-        this.from,
-        this.to,
-        this.background,
-        this.allDay = false});
+      //this.act_name,
+      this.from,
+      this.to,
+      this.background,
+      this.allDay = false});
 
   String eventName;
   //String act_name;
@@ -160,6 +161,4 @@ class Meeting {
   DateTime to;
   Color background;
   bool allDay;
-
 }
-

@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 
 class CreditCardsPage extends StatelessWidget {
-  DateTime myDateTime  = DateTime.now();
+  DateTime myDateTime = DateTime.now();
   final String username;
   final String fName;
   final String lName;
@@ -15,13 +14,13 @@ class CreditCardsPage extends StatelessWidget {
 
   CreditCardsPage(
       {Key key,
-        @required this.username,
-        this.fName,
-        this.lName,
-        this.program,
-        this.act_name,
-        this.unit,
-        this.damage})
+      @required this.username,
+      this.fName,
+      this.lName,
+      this.program,
+      this.act_name,
+      this.unit,
+      this.damage})
       : super(key: key);
 
   @override
@@ -45,29 +44,6 @@ class CreditCardsPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  // Build the title section
-  Column _buildTitleSection({@required title, @required subTitle}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0, top: 16.0),
-          child: Text(
-            '$title',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0, bottom: 16.0),
-          child: Text(
-            '$subTitle',
-            style: TextStyle(fontSize: 21, color: Colors.black45),
-          ),
-        )
-      ],
     );
   }
 
@@ -278,8 +254,8 @@ class CreditCardsPage extends StatelessWidget {
 
   // Build the top row containing logos
   Row _buildLogosBlock() {
-    var formatter =DateFormat.yMMMEd();
-    var formatter2 =DateFormat.Hms();
+    var formatter = DateFormat.yMMMEd();
+    var formatter2 = DateFormat.Hms();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -288,11 +264,13 @@ class CreditCardsPage extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              Text('วัน ${formatter.format(myDateTime)}', style: TextStyle(color: Colors.white)),
+              Text('วัน ${formatter.format(myDateTime)}',
+                  style: TextStyle(color: Colors.white)),
               SizedBox(
                 width: 5,
               ),
-              Text('เวลา ${formatter2.format(myDateTime)} ', style: TextStyle(color: Colors.white)),
+              Text('เวลา ${formatter2.format(myDateTime)}',
+                  style: TextStyle(color: Colors.white)),
             ],
           ),
         ),

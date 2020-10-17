@@ -25,7 +25,7 @@ class Scan extends StatefulWidget {
 class _ScanState extends State<Scan> {
   GlobalKey globalKey = GlobalKey();
   var vBool=false;
-  String qrCodeResult = "ว่าง";
+  String qrCodeResult=" " ;
   List<dataModel> listModel = [];
   String username;
   String fName;
@@ -71,9 +71,9 @@ class _ScanState extends State<Scan> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Scanner"),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.share), onPressed: shared),
-        ],
+        // actions: <Widget>[
+        //   IconButton(icon: Icon(Icons.share), onPressed: shared),
+        // ],
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -82,9 +82,6 @@ class _ScanState extends State<Scan> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              _buildTitleSection(
-                  title: "การเข้าร่วมกิจกรรม",
-                  subTitle: "สแกนเสร็จแล้วอย่าลืมบันทึกไว้นะ"),
               Visibility(
                 visible: vBool,
                 child: RepaintBoundary(
