@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -91,12 +90,14 @@ class _UpdateAdminState extends State<UpdateAdmin> {
 
   void deleteData() {
     var url = "https://o.sppetchz.com/project/deleteDataad.php";
-    http.post(url, body: {'id': widget.list[widget.index]['idadmin'],
-      "username": widget.list[widget.index]['username']},
-
+    http.post(
+      url,
+      body: {
+        'id': widget.list[widget.index]['idadmin'],
+        "username": widget.list[widget.index]['username']
+      },
     );
   }
-
 
   void confirm() {
     AlertDialog alertDialog = AlertDialog(
@@ -125,10 +126,14 @@ class _UpdateAdminState extends State<UpdateAdmin> {
   final formKey = new GlobalKey<FormState>();
   @override
   void initState() {
-    controllerfirstname = new TextEditingController(text: widget.list[widget.index]['firstname']);
-    controllerlastname = new TextEditingController(text: widget.list[widget.index]['lastname']);
-    controllerusername = new TextEditingController(text: widget.list[widget.index]['username']);
-    controllerpassword = new TextEditingController(text: widget.list[widget.index]['password']);
+    controllerfirstname =
+        new TextEditingController(text: widget.list[widget.index]['firstname']);
+    controllerlastname =
+        new TextEditingController(text: widget.list[widget.index]['lastname']);
+    controllerusername =
+        new TextEditingController(text: widget.list[widget.index]['username']);
+    controllerpassword =
+        new TextEditingController(text: widget.list[widget.index]['password']);
     super.initState();
     this.getDataRevel();
   }
@@ -138,127 +143,137 @@ class _UpdateAdminState extends State<UpdateAdmin> {
     return Scaffold(
       appBar: AppBar(
         title: Text("อัพเดตผู้ดูแลกิจกรรม"),
+        actions: [
+        IconButton(
+        highlightColor: Colors.red,
+        icon: Icon(Icons.delete),
+        onPressed: () => confirm(),
+          ),
+        ],
       ),
-      body: Container(
-        child: new Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Form(
-            key: formKey,
-            child: new Column(
-              children: <Widget>[
-                TextFormField(
-                  autofocus: true,
-                  autovalidate: true,
-                  controller: controllerfirstname,
-                  decoration: InputDecoration(
-                    labelText: "ชื่อจริง",
-                    icon: Icon(Icons.account_circle),
+      body: SingleChildScrollView(
+        child: Container(
+          child: new Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Form(
+              key: formKey,
+              child: new Column(
+                children: <Widget>[
+                  TextFormField(
+                    autofocus: true,
+                    autovalidate: true,
+                    controller: controllerfirstname,
+                    decoration: InputDecoration(
+                      labelText: "ชื่อจริง",
+                      icon: Icon(Icons.account_circle),
+                    ),
+                    validator: _validatefname,
+                    maxLength: 24,
                   ),
-                  validator: _validatefname,
-                  maxLength: 24,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextFormField(
-                  autovalidate: true,
-                  controller: controllerlastname,
-                  decoration: InputDecoration(
-                    labelText: "นามสกุล",
-                    icon: Icon(Icons.account_circle),
+                  SizedBox(
+                    height: 10,
                   ),
-                  maxLength: 24,
-                  validator: _validatelname,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextFormField(
-                  autovalidate: true,
-                  controller: controllerusername,
-                  decoration: InputDecoration(
-                    labelText: "Username",
-                    icon: Icon(Icons.person),
+                  TextFormField(
+                    autovalidate: true,
+                    controller: controllerlastname,
+                    decoration: InputDecoration(
+                      labelText: "นามสกุล",
+                      icon: Icon(Icons.account_circle),
+                    ),
+                    maxLength: 24,
+                    validator: _validatelname,
                   ),
-                  validator: _validateusername,
-                  maxLength: 16,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextFormField(
-                  autovalidate: true,
-                  controller: controllerpassword,
-                  decoration: InputDecoration(
-                    labelText: "Password",
-                    icon: Icon(Icons.lock),
+                  SizedBox(
+                    height: 10,
                   ),
-                  validator: _validatepassword,
-                  obscureText: true,
-                  maxLength: 16,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-                  color: Colors.white,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(
-                        child: DropdownButtonHideUnderline(
-                          child: ButtonTheme(
-                            alignedDropdown: true,
-                            child: DropdownButton(
-                              autofocus: true,
-                              items: datastatus.map((item) {
-                                return DropdownMenuItem(
-                                  child: Text(item['level']),
-                                  value: item['id'].toString(),
-                                );
-                              }).toList(),
-                              hint: Text((widget.list[widget.index]['level']),),
-                              onChanged: (newVal) {
-                                setState(
-                                      () {
-                                    _mystatus = newVal;
-                                    print(_mystatus);
-                                  },
-                                );
-                              },
-                              value: _mystatus,
+                  TextFormField(
+                    controller: controllerusername,
+                    decoration: InputDecoration(
+                      labelText: "Username",
+                      icon: Icon(Icons.person),
+                    ),
+                    validator: _validateusername,
+                    maxLength: 16,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    autovalidate: true,
+                    controller: controllerpassword,
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      icon: Icon(Icons.lock),
+                    ),
+                    validator: _validatepassword,
+                    obscureText: true,
+                    maxLength: 16,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                    color: Colors.white,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Expanded(
+                          child: DropdownButtonHideUnderline(
+                            child: ButtonTheme(
+                              alignedDropdown: true,
+                              child: DropdownButton(
+                                isExpanded: true,
+                                autofocus: true,
+                                items: datastatus.map((item) {
+                                  return DropdownMenuItem(
+                                    child: Text(
+                                      item['level'],
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    value: item['id'].toString(),
+                                  );
+                                }).toList(),
+                                hint: Text(
+                                  (widget.list[widget.index]['level']),
+                                ),
+                                onChanged: (newVal) {
+                                  setState(
+                                    () {
+                                      _mystatus = newVal;
+                                      print(_mystatus);
+                                    },
+                                  );
+                                },
+                                value: _mystatus,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                ),
-                RaisedButton(
-                  child: new Text(
-                    "ตกลง",
-                    style: TextStyle(color: Colors.white),
+                  SizedBox(
+                    height: 10,
                   ),
-                  color: Colors.blue,
-                  onPressed: _submit,
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                  ),
+                  RaisedButton(
+                    child: new Text(
+                      "ตกลง",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.blue,
+                    onPressed: _submit,
+                  )
+                ],
+              ),
             ),
           ),
         ),
       ),
-      floatingActionButton: IconButton(
-        highlightColor: Colors.red,
-        icon: Icon(Icons.delete),
-        onPressed: () => confirm(),
-      ),
+
     );
   }
 

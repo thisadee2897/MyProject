@@ -128,6 +128,13 @@ class UpdateProgramState extends State<UpdateProgram> {
     return Scaffold(
       appBar: AppBar(
         title: Text("แก้ไขโปรแกรมวิชา"),
+        actions: [
+          IconButton(
+            highlightColor: Colors.red,
+            icon: Icon(Icons.delete),
+            onPressed: () => confirm(),
+          ),
+        ],
       ),
       body: Container(
         child: SafeArea(
@@ -149,6 +156,7 @@ class UpdateProgramState extends State<UpdateProgram> {
                               child: ButtonTheme(
                                 alignedDropdown: true,
                                 child: DropdownButton(
+                                  isExpanded: true,
                                   autofocus: true,
                                   items: datasubject.map((item) {
                                     return DropdownMenuItem(
@@ -178,7 +186,6 @@ class UpdateProgramState extends State<UpdateProgram> {
                     ),
                     new TextFormField(
                       autofocus: true,
-                      autovalidate: true,
                       controller: controllerprogram,
                       decoration: new InputDecoration(
                         labelText: "เพิ่มสาขา",
@@ -207,11 +214,6 @@ class UpdateProgramState extends State<UpdateProgram> {
             ),
           ),
         ),
-      ),
-      floatingActionButton: IconButton(
-        highlightColor: Colors.red,
-        icon: Icon(Icons.delete),
-        onPressed: () => confirm(),
       ),
     );
   }

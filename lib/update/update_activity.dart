@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:my_qrcode/Page/activity.dart';
 
-
 class UpdateActivity extends StatefulWidget {
   final List list;
   final int index;
@@ -15,36 +14,39 @@ class UpdateActivity extends StatefulWidget {
   @override
   _UpdateActivityState createState() => _UpdateActivityState();
 }
-class _UpdateActivityState extends State<UpdateActivity> {
-  TextEditingController controllerid_act ;
-  TextEditingController controlleract_name ;
-  TextEditingController controllerunit ;
-  TextEditingController controllerStartTime ;
-  TextEditingController controllerEndTime ;
 
+class _UpdateActivityState extends State<UpdateActivity> {
+  TextEditingController controllerid_act;
+  TextEditingController controlleract_name;
+  TextEditingController controllerunit;
+  TextEditingController controllerStartTime;
+  TextEditingController controllerEndTime;
 
   void editactivity() {
     var url = "https://o.sppetchz.com/project/editdataactivitys.php";
-    http.post(url, body: {
-      "id": widget.list[widget.index]['id'],
-      "id_act": controllerid_act.text,
-      "act_name": controlleract_name.text,
-      "unit": controllerunit.text,
-      "type": _mytypes,
-      "agency": _myagency,
-      "StartTime": controllerStartTime.text,
-      "EndTime": controllerStartTime.text,
-
-    },
+    http.post(
+      url,
+      body: {
+        "id": widget.list[widget.index]['id'],
+        "id_act": controllerid_act.text,
+        "act_name": controlleract_name.text,
+        "unit": controllerunit.text,
+        "type": _mytypes,
+        "agency": _myagency,
+        "StartTime": controllerStartTime.text,
+        "EndTime": controllerStartTime.text,
+      },
     );
   }
 
-
   void deleteData() {
     var url = "https://o.sppetchz.com/project/deleteactivity.php";
-    http.post(url, body: {'id': widget.list[widget.index]['id'],
-      'id_act': widget.list[widget.index]['id_act']},
-
+    http.post(
+      url,
+      body: {
+        'id': widget.list[widget.index]['id'],
+        'id_act': widget.list[widget.index]['id_act']
+      },
     );
   }
 
@@ -107,20 +109,33 @@ class _UpdateActivityState extends State<UpdateActivity> {
 
   @override
   void initState() {
-    controllerStartTime = new TextEditingController(text: widget.list[widget.index]['StartTime']);
-    controllerEndTime = new TextEditingController(text: widget.list[widget.index]['EndTime']);
-    controllerid_act = new TextEditingController(text: widget.list[widget.index]['id_act']);
-    controlleract_name = new TextEditingController(text: widget.list[widget.index]['act_name']);
-    controllerunit = new TextEditingController(text: widget.list[widget.index]['unit']);
+    controllerStartTime =
+        new TextEditingController(text: widget.list[widget.index]['StartTime']);
+    controllerEndTime =
+        new TextEditingController(text: widget.list[widget.index]['EndTime']);
+    controllerid_act =
+        new TextEditingController(text: widget.list[widget.index]['id_act']);
+    controlleract_name =
+        new TextEditingController(text: widget.list[widget.index]['act_name']);
+    controllerunit =
+        new TextEditingController(text: widget.list[widget.index]['unit']);
 
     super.initState();
     this.getDataagency();
     this.getDatatype();
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("อัพเดตกิจกรรม"),
+        actions: [
+          IconButton(
+            highlightColor: Colors.red,
+            icon: Icon(Icons.delete),
+            onPressed: () => confirm(),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: new Padding(
@@ -169,7 +184,8 @@ class _UpdateActivityState extends State<UpdateActivity> {
                 ),
                 SizedBox(
                   height: 10,
-                ),new TextFormField(
+                ),
+                new TextFormField(
                   autofocus: true,
                   autovalidate: true,
                   controller: controllerStartTime,
@@ -210,6 +226,7 @@ class _UpdateActivityState extends State<UpdateActivity> {
                           child: ButtonTheme(
                             alignedDropdown: true,
                             child: DropdownButton<String>(
+                              isExpanded: true,
                               value: _myagency,
                               iconSize: 30,
                               style: TextStyle(
@@ -219,7 +236,7 @@ class _UpdateActivityState extends State<UpdateActivity> {
                               hint: Text(widget.list[widget.index]['agency']),
                               onChanged: (newVal) {
                                 setState(
-                                      () {
+                                  () {
                                     _myagency = newVal;
                                     print(_myagency);
                                   },
@@ -258,10 +275,10 @@ class _UpdateActivityState extends State<UpdateActivity> {
                                 color: Colors.black54,
                                 fontSize: 16,
                               ),
-                              hint:Text(widget.list[widget.index]['type']),
+                              hint: Text(widget.list[widget.index]['type']),
                               onChanged: (newVal) {
                                 setState(
-                                      () {
+                                  () {
                                     _mytypes = newVal;
                                     print(_mytypes);
                                   },
@@ -299,13 +316,9 @@ class _UpdateActivityState extends State<UpdateActivity> {
           ),
         ),
       ),
-      floatingActionButton: IconButton(
-        highlightColor: Colors.red,
-        icon: Icon(Icons.delete),
-        onPressed: () => confirm(),
-      ),
     );
   }
+
   String _validatedate(String value) {
     if (value.isEmpty) {
       return "ว่าง";
@@ -320,7 +333,6 @@ class _UpdateActivityState extends State<UpdateActivity> {
     return null;
   }
 
-
   String _validatefname(String value) {
     if (value.isEmpty) {
       return "ข้อมูลชื่อจริงว่าง";
@@ -334,6 +346,7 @@ class _UpdateActivityState extends State<UpdateActivity> {
     }
     return null;
   }
+
   List agencyList;
   String _myagency;
   final String url1 = "https://o.sppetchz.com/project/getdataagency.php";
@@ -349,6 +362,7 @@ class _UpdateActivityState extends State<UpdateActivity> {
     print(resBody);
     return "Sucess";
   }
+
   List typesList;
   String _mytypes;
   final String url = "https://o.sppetchz.com/project/getdatadamage.php";
@@ -364,6 +378,4 @@ class _UpdateActivityState extends State<UpdateActivity> {
     print(resBody);
     return "Sucess";
   }
-
-
 }

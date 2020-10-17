@@ -127,6 +127,13 @@ class _UpdateSubjectState extends State<UpdateSubject> {
     return Scaffold(
       appBar: AppBar(
         title: Text("เเก้ไขสาขา"),
+        actions: [
+          IconButton(
+            highlightColor: Colors.red,
+            icon: Icon(Icons.delete),
+            onPressed: () => confirm(),
+          ),
+        ],
       ),
       body: Container(
         child: SafeArea(
@@ -210,11 +217,6 @@ class _UpdateSubjectState extends State<UpdateSubject> {
             ),
           ),
         ),
-      ),
-      floatingActionButton: IconButton(
-        highlightColor: Colors.red,
-        icon: Icon(Icons.delete),
-        onPressed: () => confirm(),
       ),
     );
   }

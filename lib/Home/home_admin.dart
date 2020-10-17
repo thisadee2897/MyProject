@@ -69,11 +69,6 @@ class _homeState extends State<home> {
                 'สร้าง คิวอาโค๊ต กิจกรรม',
                 () => {Navigator.pushNamed(context, '/add_qrcode')},
               ),
-              CustomListTitle(
-                Icons.settings,
-                'เปลี่ยนรหัสผ่าน',
-                () => {Navigator.pushNamed(context, '/changpassword')},
-              ),
             ],
           ),
         ),

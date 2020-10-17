@@ -104,6 +104,7 @@ class _AddProgramState extends State<AddProgram> {
                               child: ButtonTheme(
                                 alignedDropdown: true,
                                 child: DropdownButton<String>(
+                                  isExpanded: true,
                                   value: _mysubject,
                                   iconSize: 30,
                                   style: TextStyle(
