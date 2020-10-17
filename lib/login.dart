@@ -35,7 +35,6 @@ class _LoginState extends State<Login> {
         setState(
               () {
             _user = username.text;
-            //  print(_user);
           },
         );
         Navigator.push(

@@ -14,24 +14,16 @@
     "path": "."
   },
   "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
   "dependencies": {
     "Flutter": [
 
     ],
     "MTBBarcodeScanner": [
 
-    ],
-    "SwiftProtobuf": [
-
     ]
   },
   "platforms": {
     "ios": "8.0"
-  },
-  "pod_target_xcconfig": {
-    "DEFINES_MODULE": "YES",
-    "VALID_ARCHS[sdk=iphonesimulator*]": "x86_64"
-  },
-  "swift_versions": "5.0",
-  "swift_version": "5.0"
+  }
 }

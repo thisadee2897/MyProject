@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class CreditCardsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 4,right: 4,top: 4),
+      padding: const EdgeInsets.only(left: 4, right: 4, top: 4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-
           _buildCreditCard(
             color: Colors.blue,
-            cardExpiration: "วิศว",
             cardHolder: "ทฤษฎี จรบุรมย์",
             id_student: '60522110042-2',
             fristname: "ทฤษฎี",
             lastname: "จรบุรมย์",
             subject: 'วิศวกรรมไฟฟ้า',
-            program: 'วิศวกรรคอมพิวเตอร์',
+            program: 'วิศวกรรคอมพิวเตอร์วิศวกรรคอมพิวเตอร์',
             activityname: 'ปัจฉิมนิเทศ',
             activitytype: 'บังคับ',
             activityunit: '4',
@@ -51,18 +50,18 @@ class CreditCardsPage extends StatelessWidget {
   }
 
   // Build the credit card widget
-  Card _buildCreditCard(
-      {@required Color color,
-      @required String fristname,
-      @required String lastname,
-      @required String id_student,
-      @required String subject,
-      @required String program,
-      @required String activitytype,
-      @required String activityunit,
-      @required String activityname,
-      @required String cardHolder,
-      @required String cardExpiration}) {
+  Card _buildCreditCard({
+    @required Color color,
+    @required String fristname,
+    @required String lastname,
+    @required String id_student,
+    @required String subject,
+    @required String program,
+    @required String activitytype,
+    @required String activityunit,
+    @required String activityname,
+    @required String cardHolder,
+  }) {
     return Card(
       elevation: 4.0,
       color: color,
@@ -70,7 +69,6 @@ class CreditCardsPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
       ),
       child: Container(
-        height: 400,
         padding: const EdgeInsets.only(
             left: 16.0, right: 16.0, bottom: 22.0, top: 10.0),
         child: Column(
@@ -83,16 +81,6 @@ class CreditCardsPage extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
-                  'รหัสนักศึกษา :',
-                  style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                      fontFamily: 'CourrierPrime'),
-                ),
-                SizedBox(
-                  width: 3,
-                ),
                 Text(
                   '$id_student',
                   style: TextStyle(
@@ -121,7 +109,7 @@ class CreditCardsPage extends StatelessWidget {
                       '$fristname',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontFamily: 'CourrierPrime'),
                     ),
                     SizedBox(
@@ -131,7 +119,7 @@ class CreditCardsPage extends StatelessWidget {
                       '$lastname',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontFamily: 'CourrierPrime'),
                     ),
                   ],
@@ -159,50 +147,61 @@ class CreditCardsPage extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Text(
-                  'โปรแกรม :',
-                  style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                      fontFamily: 'CourrierPrime'),
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text(
-                  '$program',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'CourrierPrime'),
-                ),
-              ],
+            Container(
+              alignment: Alignment.topLeft,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'โปรแกรม :',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 16,
+                        fontFamily: 'CourrierPrime'),
+                  ),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  Expanded(
+                    child: Text(
+                      '$program',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: 'CourrierPrime'),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 20,
             ),
-            Row(
-              children: [
-                Text(
-                  'กิจกรรม :',
-                  style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                      fontFamily: 'CourrierPrime'),
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text(
-                  '$activityname',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'CourrierPrime'),
-                ),
-              ],
+            Container(
+              alignment: Alignment.topLeft,
+              child: Row(
+                children: [
+                  Text(
+                    'กิจกรรม :',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 16,
+                        fontFamily: 'CourrierPrime'),
+                  ),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  Expanded(
+                    child: Text(
+                      '$activityname',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: 'CourrierPrime'),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Row(
               children: [
@@ -247,7 +246,7 @@ class CreditCardsPage extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 80,
+              height: 50,
             ),
           ],
         ),
@@ -260,8 +259,8 @@ class CreditCardsPage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Text("SKC.RMUTI",
-            style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold,fontSize: 20)),
+        // Text("SKC.RMUTI",
+        //     style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold,fontSize: 20)),
         Row(
           children: [
             Text("22 ต.ค.2563", style: TextStyle(color: Colors.white)),

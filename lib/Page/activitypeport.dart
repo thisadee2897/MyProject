@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_qrcode/Page/reportdata.dart';
 
 class Report extends StatefulWidget {
   @override
@@ -11,11 +12,12 @@ class Report extends StatefulWidget {
 class _ReportState extends State<Report> {
   Future<List> getData2() async {
     final response =
-        await http.get("https://o.sppetchz.com/project/getdataactivitys.php");
+    await http.get("https://o.sppetchz.com/project/getdataactivitys.php");
     return json.decode(response.body);
   }
 
   var refreshKey = GlobalKey<RefreshIndicatorState>();
+
   Future<Null> refreshList() async {
     refreshKey.currentState?.show(atTop: false);
     await Future.delayed(Duration(seconds: 1));
@@ -40,11 +42,11 @@ class _ReportState extends State<Report> {
               if (snapshot.hasError) print(snapshot.error);
               return snapshot.hasData
                   ? new buildROW(
-                      list: snapshot.data,
-                    )
+                list: snapshot.data,
+              )
                   : new Center(
-                      child: new CircularProgressIndicator(),
-                    );
+                child: new CircularProgressIndicator(),
+              );
             },
           ),
         ),
@@ -55,37 +57,36 @@ class _ReportState extends State<Report> {
 
 class buildROW extends StatelessWidget {
   List list;
+
   buildROW({this.list});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: list == null ? 0 : list.length,
       itemBuilder: (context, i) {
         return ListTile(
-          title: Row(
-            children: <Widget>[
-              Text(list[i]['act_name']),
-            ],
-          ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(list[i]['agency']),
-            ],
-          ),
-          trailing: Icon(Icons.chevron_right),
-          onTap: () {
-            Navigator.pushNamed(context, '/reportdata');
-          },
-          // onTap: () => Navigator.of(context).push(
-          //   new MaterialPageRoute(
-          //     builder: (BuildContext context) => ReportData(
-          //       list: list,
-          //       index: i,
-          //     ),
-          //   ),
-          // ),
-        );
+            title: Row(
+              children: <Widget>[
+                Text(list[i]['act_name']),
+              ],
+            ),
+            trailing: Icon(Icons.chevron_right),
+            // onTap: () {
+            //   Navigator.pushNamed(context, '/reportdata');
+            // },
+            onTap: () {
+              print(list[i]['id_act'].toString());
+
+              Navigator.of(context).push(
+                new MaterialPageRoute(
+                  builder: (BuildContext context) => ReportData(
+                    idAct: list[i]['id_act'],
+                    index: i,
+                  ),
+                ),
+              );
+            });
       },
     );
   }
