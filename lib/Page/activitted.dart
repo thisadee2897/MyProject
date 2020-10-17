@@ -276,7 +276,7 @@ class _buildROWState extends State<buildROW> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      (widget.list[i]['type']),
+                      (widget.list[i]['damage']),
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                     Text(
