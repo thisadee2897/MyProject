@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class home extends StatefulWidget {
   @override
   _homeState createState() => _homeState();
 }
 
+// ignore: camel_case_types
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
@@ -80,6 +82,7 @@ class _homeState extends State<home> {
   }
 }
 
+// ignore: must_be_immutable
 class CustomListTitle extends StatelessWidget {
   IconData icon;
   String text;

@@ -3,13 +3,13 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:my_qrcode/Page/student.dart';
 
-
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
+  // ignore: non_constant_identifier_names
   TextEditingController controllerid_card = new TextEditingController();
   TextEditingController controllerfirstname = new TextEditingController();
   TextEditingController controllerlastname = new TextEditingController();
@@ -37,7 +37,6 @@ class _SignUpState extends State<SignUp> {
       },
     );
   }
-
 
   List studyList;
   String _mystudy;
@@ -105,7 +104,6 @@ class _SignUpState extends State<SignUp> {
   }
 
   List revelList;
-  String _mystatus;
   final String url5 = "https://o.sppetchz.com/project/getdatalevel.php";
   List datastatus = List();
 
@@ -180,8 +178,6 @@ class _SignUpState extends State<SignUp> {
                 child: new Column(
                   children: <Widget>[
                     new TextFormField(
-
-                      autovalidate: true,
                       controller: controllerfirstname,
                       decoration: new InputDecoration(
                         labelText: "ชื่อจริง",
@@ -195,7 +191,6 @@ class _SignUpState extends State<SignUp> {
                     ),
                     new TextFormField(
                       textInputAction: TextInputAction.send,
-                      autovalidate: true,
                       controller: controllerlastname,
                       decoration: new InputDecoration(
                         labelText: "นามสกุล",
@@ -208,7 +203,6 @@ class _SignUpState extends State<SignUp> {
                       height: 10,
                     ),
                     new TextFormField(
-                      autovalidate: true,
                       controller: controllerid_card,
                       decoration: new InputDecoration(
                         labelText: "เลขบัตรประชาชน",
@@ -221,7 +215,6 @@ class _SignUpState extends State<SignUp> {
                       height: 10,
                     ),
                     new TextFormField(
-                      autovalidate: true,
                       controller: controllerusername,
                       decoration: new InputDecoration(
                         labelText: "รหัสนักศึกษา",
@@ -255,7 +248,7 @@ class _SignUpState extends State<SignUp> {
                                   hint: Text('ระดับการศึกษา'),
                                   onChanged: (newVal) {
                                     setState(
-                                          () {
+                                      () {
                                         _mystudy = newVal;
                                         selectboard(_mystudy);
                                         print(_mystudy);
@@ -295,7 +288,7 @@ class _SignUpState extends State<SignUp> {
                                   hint: Text('คณะ'),
                                   onChanged: (newVal) {
                                     setState(
-                                          () {
+                                      () {
                                         _myboard = newVal;
                                         selectsubject(_myboard);
                                         print("subject" + _myboard);
@@ -335,7 +328,7 @@ class _SignUpState extends State<SignUp> {
                                   hint: Text('สาขา'),
                                   onChanged: (newVal) {
                                     setState(
-                                          () {
+                                      () {
                                         _mysubject = newVal;
                                         selectprogram(_mysubject);
                                         print(_mysubject);
@@ -375,7 +368,7 @@ class _SignUpState extends State<SignUp> {
                                   hint: Text('โปรแกรม'),
                                   onChanged: (newVal) {
                                     setState(
-                                          () {
+                                      () {
                                         _myprogram = newVal;
                                         print(_myprogram);
                                       },
@@ -393,7 +386,6 @@ class _SignUpState extends State<SignUp> {
                       height: 10,
                     ),
                     new TextFormField(
-                      autovalidate: true,
                       controller: controllerpassword,
                       decoration: new InputDecoration(
                         labelText: "สร้างรหัสผ่าน",
@@ -425,9 +417,9 @@ class _SignUpState extends State<SignUp> {
         ),
       ),
     );
-
   }
 
+  // ignore: non_constant_identifier_names
   String _validateid_card(String value) {
     if (value.isEmpty) {
       return "ว่าง";
@@ -438,6 +430,7 @@ class _SignUpState extends State<SignUp> {
     return null;
   }
 
+  // ignore: non_constant_identifier_names
   String _validateid_student(String value) {
     if (value.isEmpty) {
       return "ว่าง";
@@ -448,18 +441,21 @@ class _SignUpState extends State<SignUp> {
     return null;
   }
 
+  // ignore: missing_return
   String _validatefname(String value) {
     if (value.isEmpty) {
       return "ว่าง";
     }
   }
 
+  // ignore: missing_return
   String _validatelname(String value) {
     if (value.isEmpty) {
       return "ว่าง";
     }
   }
 
+  // ignore: missing_return
   String _validatepassword(String value) {
     if (value.isEmpty) {
       return "ว่าง";
@@ -468,6 +464,7 @@ class _SignUpState extends State<SignUp> {
       return "กรอกข้อมูลให้ครบถ้วน";
     }
   }
+
   void selectstudy(String idboard) {
     var url = "https://o.sppetchz.com/project/selectboard.php";
     http.post(
@@ -482,6 +479,7 @@ class _SignUpState extends State<SignUp> {
       });
     });
   }
+
   void selectboard(String idboard) {
     var url = "https://o.sppetchz.com/project/selectboard.php";
     http.post(
@@ -527,5 +525,3 @@ class _SignUpState extends State<SignUp> {
     });
   }
 }
-
-

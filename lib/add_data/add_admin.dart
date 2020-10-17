@@ -24,6 +24,7 @@ class _AddAdminState extends State<AddAdmin> {
   TextEditingController controllerusername = new TextEditingController();
   TextEditingController controllerpassword = new TextEditingController();
   TextEditingController controllerlevel = new TextEditingController();
+  // ignore: non_constant_identifier_names
   TextEditingController controllerid_username = new TextEditingController();
   void addData() {
     var url = "https://o.sppetchz.com/project/adddataad.php";
@@ -89,7 +90,6 @@ class _AddAdminState extends State<AddAdmin> {
               children: <Widget>[
                 new TextFormField(
                   autofocus: true,
-                  autovalidate: true,
                   controller: controllerfirstname,
                   decoration: new InputDecoration(
                     labelText: "ชื่อจริง",
@@ -103,7 +103,6 @@ class _AddAdminState extends State<AddAdmin> {
                 ),
                 new TextFormField(
                   textInputAction: TextInputAction.send,
-                  autovalidate: true,
                   controller: controllerlastname,
                   decoration: new InputDecoration(
                     labelText: "นามสกุล",
@@ -116,7 +115,6 @@ class _AddAdminState extends State<AddAdmin> {
                   height: 10,
                 ),
                 new TextFormField(
-                  autovalidate: true,
                   controller: controllerusername,
                   decoration: new InputDecoration(
                     labelText: "Username",
@@ -129,7 +127,7 @@ class _AddAdminState extends State<AddAdmin> {
                   height: 10,
                 ),
                 new TextFormField(
-                  autovalidate: true,
+
                   controller: controllerpassword,
                   decoration: new InputDecoration(
                     labelText: "Password",

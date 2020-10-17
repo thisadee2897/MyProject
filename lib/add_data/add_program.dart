@@ -3,8 +3,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:my_qrcode/Page/student.dart';
 
-
-
 class AddProgram extends StatefulWidget {
   @override
   _AddProgramState createState() => _AddProgramState();
@@ -115,7 +113,7 @@ class _AddProgramState extends State<AddProgram> {
                                   hint: Text('เลือกสาขา'),
                                   onChanged: (newVal) {
                                     setState(
-                                          () {
+                                      () {
                                         _mysubject = newVal;
                                         print(_mysubject);
                                       },
@@ -139,7 +137,6 @@ class _AddProgramState extends State<AddProgram> {
                     ),
                     new TextFormField(
                       autofocus: true,
-                      autovalidate: true,
                       controller: controllerprogram,
                       decoration: new InputDecoration(
                         labelText: "เพิ่มโปรแกรมวิชา",
@@ -171,44 +168,10 @@ class _AddProgramState extends State<AddProgram> {
     );
   }
 
-  String _validateid_card(String value) {
-    if (value.isEmpty) {
-      return "ว่าง";
-    }
-    if (value.length < 13) {
-      return "กรอกข้อมูลให้ครบถ้วน";
-    }
-    return null;
-  }
-
-  String _validateid_student(String value) {
-    if (value.isEmpty) {
-      return "ว่าง";
-    }
-    if (value.length < 13) {
-      return "กรอกข้อมูลให้ครบถ้วน";
-    }
-    return null;
-  }
-
+  // ignore: missing_return
   String _validatefname(String value) {
     if (value.isEmpty) {
       return "ว่าง";
-    }
-  }
-
-  String _validatelname(String value) {
-    if (value.isEmpty) {
-      return "ว่าง";
-    }
-  }
-
-  String _validatepassword(String value) {
-    if (value.isEmpty) {
-      return "ว่าง";
-    }
-    if (value.length < 8) {
-      return "กรอกข้อมูลให้ครบถ้วน";
     }
   }
 }

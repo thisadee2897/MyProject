@@ -12,7 +12,9 @@ class AddActivity extends StatefulWidget {
 }
 
 class _AddActivityState extends State<AddActivity> {
+  // ignore: non_constant_identifier_names
   TextEditingController controllerid_activity = new TextEditingController();
+  // ignore: non_constant_identifier_names
   TextEditingController controlleract_name = new TextEditingController();
   TextEditingController controllertype = new TextEditingController();
   TextEditingController controlleragengy = new TextEditingController();
@@ -87,7 +89,6 @@ class _AddActivityState extends State<AddActivity> {
               children: <Widget>[
                 new TextFormField(
                   autofocus: true,
-                  autovalidate: true,
                   controller: controllerid_activity,
                   decoration: new InputDecoration(
                     labelText: "สร้างไอดีกิจกรรม",
@@ -101,7 +102,6 @@ class _AddActivityState extends State<AddActivity> {
                 ),
                 new TextFormField(
                   textInputAction: TextInputAction.send,
-                  autovalidate: true,
                   controller: controlleract_name,
                   decoration: new InputDecoration(
                     labelText: "ชื่อกิจกรรม",
@@ -114,7 +114,6 @@ class _AddActivityState extends State<AddActivity> {
                   height: 10,
                 ),
                 new TextFormField(
-                  autovalidate: true,
                   controller: controllerunit,
                   decoration: new InputDecoration(
                     labelText: "จำนวนหน่วย",
@@ -128,7 +127,6 @@ class _AddActivityState extends State<AddActivity> {
                 ),
                 new TextFormField(
                   autofocus: true,
-                  autovalidate: true,
                   controller: controllerStartTime,
                   decoration: new InputDecoration(
                     labelText: "วันที่เริ่มจัดกิจกรรม",
@@ -143,7 +141,6 @@ class _AddActivityState extends State<AddActivity> {
                 ),
                 new TextFormField(
                   autofocus: true,
-                  autovalidate: true,
                   controller: controllerEndTime,
                   decoration: new InputDecoration(
                     labelText: "วันที่สิ้นสุดกิจกรรม",

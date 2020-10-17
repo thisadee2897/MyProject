@@ -136,7 +136,6 @@ class _AddSubjectState extends State<AddSubject> {
                     ),
                     new TextFormField(
                       autofocus: true,
-                      autovalidate: true,
                       controller: controllersubject,
                       decoration: new InputDecoration(
                         labelText: "เพิ่มสาขา",
@@ -169,6 +168,7 @@ class _AddSubjectState extends State<AddSubject> {
     );
   }
 
+  // ignore: missing_return
   String _validatefname(String value) {
     if (value.isEmpty) {
       return "ว่าง";

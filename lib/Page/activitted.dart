@@ -273,7 +273,7 @@ class _buildROWState extends State<buildROW> {
                 width: 150,
                 alignment: Alignment.center,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       (widget.list[i]['damage']),

@@ -86,6 +86,7 @@ class _AddQRcodeState extends State<AddQRcode> {
     ),
   );
 
+  // ignore: non_constant_identifier_names
   void Change() {
     setState(() {
       _dataQRCode = _textcontoller.text;

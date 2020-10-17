@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'Home/home_student.dart';
-import 'constant.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -16,6 +15,7 @@ class _LoginState extends State<Login> {
   TextEditingController username = new TextEditingController();
   TextEditingController password = new TextEditingController();
 
+  // ignore: missing_return
   Future<List> _submits() async {
     final response = await http.post("https://o.sppetchz.com/project/login.php",
         body: {"username": username.text, "password": password.text});
@@ -33,11 +33,11 @@ class _LoginState extends State<Login> {
         // Navigator.pushReplacementNamed(context, '/home_student');
       } else if (datauser[0]['level'] == '4') {
         setState(
-              () {
+          () {
             _user = username.text;
           },
         );
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => HomeStudent(username: _user),
@@ -50,7 +50,6 @@ class _LoginState extends State<Login> {
     }
   }
 
-  bool _rememberMe = false;
   final _formKey = GlobalKey<FormState>();
   FocusNode passwordFocusNode = FocusNode();
 
@@ -60,7 +59,6 @@ class _LoginState extends State<Login> {
       children: <Widget>[
         new TextFormField(
           autofocus: true,
-          autovalidate: false,
           controller: username,
           style: TextStyle(
             color: Colors.white,
@@ -118,7 +116,6 @@ class _LoginState extends State<Login> {
         new TextFormField(
           cursorColor: Colors.white,
           autofocus: true,
-          autovalidate: false,
           controller: password,
           style: TextStyle(
             color: Colors.white,
@@ -132,20 +129,6 @@ class _LoginState extends State<Login> {
           validator: _validatepassword,
         ),
       ],
-    );
-  }
-
-  Widget _buildForgotPasswordBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: FlatButton(
-        onPressed: () => print('Forgot Password Button Pressed'),
-        padding: EdgeInsets.only(right: 0.0),
-        child: Text(
-          'Forgot Password?',
-          style: kLabelStyle,
-        ),
-      ),
     );
   }
 
@@ -172,25 +155,6 @@ class _LoginState extends State<Login> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildSignInWithText() {
-    return Column(
-      children: <Widget>[
-        Text(
-          '- OR -',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-        SizedBox(height: 20.0),
-        Text(
-          'Sign in with',
-          style: kLabelStyle,
-        ),
-      ],
     );
   }
 
