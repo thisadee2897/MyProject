@@ -271,6 +271,7 @@ class _buildROWState extends State<buildROW> {
               ),
               Container(
                 width: 150,
+                padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -286,6 +287,7 @@ class _buildROWState extends State<buildROW> {
                   ],
                 ),
               ),
+
             ],
           ),
         );

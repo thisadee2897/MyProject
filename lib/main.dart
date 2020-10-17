@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 import 'package:my_qrcode/Page/activitted.dart';
 import 'package:my_qrcode/Page/activitypeport.dart';
 import 'package:my_qrcode/Page/reportdata.dart';
@@ -27,7 +29,11 @@ import 'update/update_program.dart';
 import 'update/update_student.dart';
 import 'update/update_subject.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  Intl.defaultLocale = "th";
+  initializeDateFormatting();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   final _route = <String, WidgetBuilder>{

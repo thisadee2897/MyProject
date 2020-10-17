@@ -1,7 +1,29 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:intl/intl.dart';
 
 class CreditCardsPage extends StatelessWidget {
+  DateTime myDateTime  = DateTime.now();
+  final String username;
+  final String fName;
+  final String lName;
+  final String program;
+  final String act_name;
+  final String unit;
+  final String damage;
+
+  CreditCardsPage(
+      {Key key,
+        @required this.username,
+        this.fName,
+        this.lName,
+        this.program,
+        this.act_name,
+        this.unit,
+        this.damage})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,15 +33,15 @@ class CreditCardsPage extends StatelessWidget {
         children: <Widget>[
           _buildCreditCard(
             color: Colors.blue,
-            cardHolder: "ทฤษฎี จรบุรมย์",
-            id_student: '60522110042-2',
-            fristname: "ทฤษฎี",
-            lastname: "จรบุรมย์",
-            subject: 'วิศวกรรมไฟฟ้า',
-            program: 'วิศวกรรคอมพิวเตอร์วิศวกรรคอมพิวเตอร์',
-            activityname: 'ปัจฉิมนิเทศ',
-            activitytype: 'บังคับ',
-            activityunit: '4',
+            cardHolder: "$fName $lName",
+            id_student: username,
+            fristname: fName,
+            lastname: lName,
+            subject: program,
+            program: program,
+            activityname: act_name,
+            activitytype: damage,
+            activityunit: unit,
           ),
         ],
       ),
@@ -256,19 +278,23 @@ class CreditCardsPage extends StatelessWidget {
 
   // Build the top row containing logos
   Row _buildLogosBlock() {
+    var formatter =DateFormat.yMMMEd();
+    var formatter2 =DateFormat.Hms();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         // Text("SKC.RMUTI",
         //     style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold,fontSize: 20)),
-        Row(
-          children: [
-            Text("22 ต.ค.2563", style: TextStyle(color: Colors.white)),
-            SizedBox(
-              width: 5,
-            ),
-            Text("19:47 น.", style: TextStyle(color: Colors.white)),
-          ],
+        Expanded(
+          child: Row(
+            children: [
+              Text('วัน ${formatter.format(myDateTime)}', style: TextStyle(color: Colors.white)),
+              SizedBox(
+                width: 5,
+              ),
+              Text('เวลา ${formatter2.format(myDateTime)} ', style: TextStyle(color: Colors.white)),
+            ],
+          ),
         ),
         // Text("Activity", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       ],
