@@ -516,11 +516,11 @@ class _AddStudentState extends State<AddStudent> {
     });
   }
 
-  void selectprogram(String idsubject) {
+  void selectprogram(String idprogram) {
     var url = "https://o.sppetchz.com/project/selectprogram.php";
     http.post(
       url,
-      body: {"id": idsubject},
+      body: {"id": idprogram},
     ).then((response) {
       print("Response status: ${response.statusCode}");
       print("Response body: ${json.decode(response.body)}");
