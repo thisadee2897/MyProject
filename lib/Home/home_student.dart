@@ -42,7 +42,7 @@ class _HomeStudentState extends State<HomeStudent> {
             child: ListView(
               children: <Widget>[
                 CustomListTitle(
-                  Icons.settings_rounded,
+                  Icons.settings,
                   'แก้ไขข้อมูลส่วนตัว',
                       () => Navigator.push(
                     context,

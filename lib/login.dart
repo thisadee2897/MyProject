@@ -6,12 +6,39 @@ import 'Home/home_student.dart';
 
 class Login extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _LoginState();
+  }
 }
+
+showAlertDialog(BuildContext context) {
+  AlertDialog alert = AlertDialog(
+    content: new Row(
+      children: [
+        CircularProgressIndicator(),
+        Container(
+            margin: EdgeInsets.only(left: 5), child: Text("กำลังตรวจสอบ")),
+      ],
+    ),
+  );
+  showDialog(
+    // barrierDismissible: false,
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+@override
+_LoginState createState() => _LoginState();
 
 var _user;
 
 class _LoginState extends State<Login> {
+  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
   TextEditingController username = new TextEditingController();
   TextEditingController password = new TextEditingController();
 
@@ -20,6 +47,7 @@ class _LoginState extends State<Login> {
     final response = await http.post("https://o.sppetchz.com/project/login.php",
         body: {"username": username.text, "password": password.text});
     var datauser = json.decode(response.body);
+    // showAlertDialog(context);
     if (datauser.length == 0) {
       setState(() {
         _showAlertDialog();
@@ -133,14 +161,14 @@ class _LoginState extends State<Login> {
 
   Widget _buildLoginBtn() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25.0),
+      padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
         onPressed: _submits,
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(50.0),
         ),
         color: Colors.white,
         child: Text(
@@ -201,58 +229,61 @@ class _LoginState extends State<Login> {
                 width: double.infinity,
                 color: Colors.blue,
               ),
-              Container(
-                height: double.infinity,
-                child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                    vertical: 120.0,
-                  ),
-                  child: Form(
-                    key: _formKey,
+              SafeArea(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'ACTIVITES',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'OpenSans',
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 30.0),
-                        Card(
-                          color: Colors.white,
-                          elevation: 5.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(8, 8, 10, 25),
-                            child: Column(
-                              children: [
-                                _buildEmailTF(),
-                                SizedBox(
-                                  height: 30.0,
-                                ),
-                                _buildPasswordTF(),
-                              ],
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Center(
+                          child: Text(
+                            'ACTIVITES',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'OpenSans',
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        _buildLoginBtn(),
-                        SizedBox(
-                          height: 50,
+                        Center(
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Card(
+                                  color: Colors.white,
+                                  elevation: 5.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(8, 8, 10, 25),
+                                    child: Column(
+                                      children: [
+                                        _buildEmailTF(),
+                                        SizedBox(
+                                          height: 30.0,
+                                        ),
+                                        _buildPasswordTF(),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                _buildLoginBtn(),
+                              ],
+                            ),
+                          ),
                         ),
                         _buildSignupBtn(),
                       ],
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
