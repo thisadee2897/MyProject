@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 
-class CreditCardsPage extends StatelessWidget {
-  DateTime myDateTime = DateTime.now();
+class CreditCardsPage extends StatefulWidget {
   final String username;
   final String fName;
   final String lName;
@@ -11,20 +10,33 @@ class CreditCardsPage extends StatelessWidget {
   final String act_name;
   final String unit;
   final String damage;
+  final String subject;
 
   CreditCardsPage(
       {Key key,
-      @required this.username,
-      this.fName,
-      this.lName,
-      this.program,
-      this.act_name,
-      this.unit,
-      this.damage})
+        @required this.username,
+        this.fName,
+        this.lName,
+        this.program,
+        this.act_name,
+        this.unit,
+        this.damage,
+        this.subject})
       : super(key: key);
 
   @override
+  _CreditCardsPageState createState() => _CreditCardsPageState();
+}
+
+class _CreditCardsPageState extends State<CreditCardsPage> {
+  DateTime myDateTime = DateTime.now();
+
+
+  @override
   Widget build(BuildContext context) {
+
+
+
     return Container(
       padding: const EdgeInsets.only(left: 4, right: 4, top: 4),
       child: Column(
@@ -32,22 +44,21 @@ class CreditCardsPage extends StatelessWidget {
         children: <Widget>[
           _buildCreditCard(
             color: Colors.blue,
-            cardHolder: "$fName $lName",
-            id_student: username,
-            fristname: fName,
-            lastname: lName,
-            subject: program,
-            program: program,
-            activityname: act_name,
-            activitytype: damage,
-            activityunit: unit,
+            cardHolder: "${widget.fName} ${widget.lName}",
+            id_student: widget.username,
+            fristname: widget.fName,
+            lastname: widget.lName,
+            subject: widget.subject,
+            program: widget.program,
+            activityname: widget.act_name,
+            activitytype: widget.damage,
+            activityunit: widget.unit,
           ),
         ],
       ),
     );
   }
 
-  // Build the credit card widget
   Card _buildCreditCard({
     @required Color color,
     @required String fristname,
@@ -252,7 +263,6 @@ class CreditCardsPage extends StatelessWidget {
     );
   }
 
-  // Build the top row containing logos
   Row _buildLogosBlock() {
     var formatter = DateFormat.yMMMEd();
     var formatter2 = DateFormat.Hms();
@@ -279,7 +289,6 @@ class CreditCardsPage extends StatelessWidget {
     );
   }
 
-// Build Column containing the cardholder and expiration information
   Column _buildDetailsBlock({@required String label, @required String value}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

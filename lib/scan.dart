@@ -1,13 +1,12 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import 'package:path_provider/path_provider.dart';
 import 'Page/slip.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'dart:ui' as ui;
@@ -24,46 +23,56 @@ class Scan extends StatefulWidget {
 
 class _ScanState extends State<Scan> {
   GlobalKey globalKey = GlobalKey();
-  var vBool=false;
-  String qrCodeResult=" " ;
+  var vBool = false;
+  String qrCodeResult = " ";
+
   List<dataModel> listModel = [];
-  String username;
   String fName;
   String lName;
   String program;
   String act_name;
   String unit;
   String damage;
+  String subject;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     _requestPermission();
-    getData();
   }
 
-  Future<Null> getData() async {
+  Future<Null> getData(String codeSanner) async {
     var url = "https://o.sppetchz.com/project/selectSlip.php";
+    print(codeSanner);
     final response = await http
-        .post(url, body: {"username": widget.username, "id_act": qrCodeResult});
+        .post(url, body: {"username": widget.username, "id_act": codeSanner});
     print(response.statusCode);
     final data = jsonDecode(response.body);
-    print("test" + data.toString());
 
-    setState(() {
-      for (Map map in data) {
-        listModel.add(dataModel.fromJson(map));
-      }
-      username = listModel[0].fName.toString();
-      act_name = listModel[0].act_name.toString();
-      damage = listModel[0].damage.toString();
-      fName = listModel[0].fName.toString();
-      lName = listModel[0].lName.toString();
-      unit = listModel[0].unit.toString();
-      program = listModel[0].program.toString();
-    });
+    for (Map map in data) {
+      print("getData0 $map");
+      listModel.add(dataModel.fromJson(map));
+      setState(() {
+        act_name = map['act_name'].toString();
+        damage = map['damage'].toString();
+        fName = map['firstname'].toString();
+        lName = map['lastname'].toString();
+        unit = map['unit'].toString();
+        program = map['program'].toString();
+        subject =map['subject'].toString();
+        vBool = true;
+
+      });
+
+    }
+
+    print('Howdy, ${act_name}!') ;
+    sendScan(codeSanner);
+
+
+
+
   }
 
   @override
@@ -86,14 +95,15 @@ class _ScanState extends State<Scan> {
                 visible: vBool,
                 child: RepaintBoundary(
                   key: globalKey,
-                  child: CreditCardsPage(
-                    username: fName,
+                  child:  CreditCardsPage(
+                    username: widget.username,
                     act_name: act_name,
                     damage: damage,
                     fName: fName,
                     lName: lName,
                     unit: unit,
                     program: program,
+                    subject: subject,
                   ),
                 ),
               ),
@@ -111,14 +121,14 @@ class _ScanState extends State<Scan> {
                 padding: EdgeInsets.all(15.0),
                 onPressed: () async {
                   String codeSanner =
-                  (await BarcodeScanner.scan()) as String; //barcode scnner
+                  (await BarcodeScanner.scan()); //barcode scnner
                   setState(() {
-                    capture();
                     qrCodeResult = codeSanner;
-                    sendScan(qrCodeResult);
-                    vBool =true;
+                    getData(codeSanner);
 
                   });
+
+
                 },
                 child: Text(
                   "SCAN QR CODE",
@@ -158,35 +168,37 @@ class _ScanState extends State<Scan> {
     );
   }
 
-  void sendScan(String qrCodeResult) {
-    print(widget.username);
+  void sendScan(String qrCodeResult) async {
+
     var url = "https://o.sppetchz.com/project/InsertScan.php";
-    http.post(
+    await http.post(
       url,
       body: {
         "id_act": qrCodeResult,
         "username": widget.username,
       },
     );
+    print(widget.username);
+    capture();
   }
 
-  Future shared() async {
-    try {
-      RenderRepaintBoundary boundary =
-      globalKey.currentContext.findRenderObject();
-      var image = await boundary.toImage();
-      ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
-      Uint8List pngBytes = byteData.buffer.asUint8List();
-
-      final tempDir = await getTemporaryDirectory();
-      final file = await File('${tempDir.path}/image.png').create();
-      await file.writeAsBytes(pngBytes);
-      final channel = MethodChannel('cm.share/share');
-      channel.invokeMethod('shareFile', 'image.png');
-    } catch (e) {
-      print(e.toString());
-    }
-  }
+  // Future shared() async {
+  //   try {
+  //     RenderRepaintBoundary boundary =
+  //         globalKey.currentContext.findRenderObject();
+  //     var image = await boundary.toImage();
+  //     ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
+  //     Uint8List pngBytes = byteData.buffer.asUint8List();
+  //
+  //     final tempDir = await getTemporaryDirectory();
+  //     final file = await File('${tempDir.path}/image.png').create();
+  //     await file.writeAsBytes(pngBytes);
+  //     final channel = MethodChannel('cm.share/share');
+  //     channel.invokeMethod('shareFile', 'image.png');
+  //   } catch (e) {
+  //     print(e.toString());
+  //   }
+  // }
 
   _requestPermission() async {
     Map<Permission, PermissionStatus> statuses = await [
@@ -198,20 +210,24 @@ class _ScanState extends State<Scan> {
   }
 
   _toastInfo(String info) {
-    print("$info");
-    // Fluttertoast.showToast(msg: info, toastLength: Toast.LENGTH_LONG);
+    Fluttertoast.showToast(msg: info, toastLength: Toast.LENGTH_LONG);
   }
 
   void capture() async {
+    print(vBool);
+
     RenderRepaintBoundary boundary =
     globalKey.currentContext.findRenderObject();
     ui.Image image = await boundary.toImage(pixelRatio: 1);
     ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    final result =
-    await ImageGallerySaver.saveImage(byteData.buffer.asUint8List());
+    final result = await ImageGallerySaver.saveImage(
+        byteData.buffer.asUint8List(),
+        name: "$qrCodeResult${widget.username}");
     print(result);
     _toastInfo(result.toString());
   }
+
+
 }
 
 class dataModel {
@@ -221,9 +237,10 @@ class dataModel {
   final String act_name;
   final String unit;
   final String damage;
+  final String subject;
 
   dataModel(this.fName, this.lName, this.program, this.act_name, this.unit,
-      this.damage);
+      this.damage, this.subject);
 
   dataModel.fromJson(Map<String, dynamic> json)
       : fName = json["firstname"],
@@ -231,5 +248,6 @@ class dataModel {
         program = json["program"],
         act_name = json["act_name"],
         unit = json["unit"],
-        damage = json["damage"];
+        damage = json["damage"],
+        subject = json["subject"];
 }
