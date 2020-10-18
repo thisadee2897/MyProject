@@ -22,7 +22,7 @@ dependencies:
 
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.10.0
-  path_provider: ^1.6.11
+  path_provider: ^1.6.21
   barcode_scan: ^2.0.1
   qr_flutter: ^3.2.0
   dart_mssql: ^1.0.1
@@ -41,7 +41,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  path_provider: ^1.6.8
   image_gallery_saver: ^1.6.0
 
 

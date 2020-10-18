@@ -4,12 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1933519789/barcode_scan.iml" filepath="$PROJECT_DIR$/.idea/modules/1933519789/barcode_scan.iml" group="android/barcode_scan" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1457572508/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-1457572508/path_provider.iml" group="android/path_provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/419468333/barcode_scan.iml" filepath="$PROJECT_DIR$/.idea/modules/419468333/barcode_scan.iml" group="android/barcode_scan" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1950548835/fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/-1950548835/fluttertoast.iml" group="android/fluttertoast" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-26469236/image_gallery_saver.iml" filepath="$PROJECT_DIR$/.idea/modules/-26469236/image_gallery_saver.iml" group="android/image_gallery_saver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1886806660/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-1886806660/path_provider.iml" group="android/path_provider" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1304015465/path_provider_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/1304015465/path_provider_linux.iml" group="android/path_provider_linux" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-9693907/path_provider_macos.iml" filepath="$PROJECT_DIR$/.idea/modules/-9693907/path_provider_macos.iml" group="android/path_provider_macos" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-463198790/path_provider_windows.iml" filepath="$PROJECT_DIR$/.idea/modules/-463198790/path_provider_windows.iml" group="android/path_provider_windows" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1035964959/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-1035964959/shared_preferences.iml" group="android/shared_preferences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1243608531/permission_handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1243608531/permission_handler.iml" group="android/permission_handler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-207650808/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-207650808/shared_preferences.iml" group="android/shared_preferences" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1865441143/shared_preferences_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/-1865441143/shared_preferences_linux.iml" group="android/shared_preferences_linux" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1124022166/shared_preferences_macos.iml" filepath="$PROJECT_DIR$/.idea/modules/-1124022166/shared_preferences_macos.iml" group="android/shared_preferences_macos" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1783415215/shared_preferences_web.iml" filepath="$PROJECT_DIR$/.idea/modules/1783415215/shared_preferences_web.iml" group="android/shared_preferences_web" />

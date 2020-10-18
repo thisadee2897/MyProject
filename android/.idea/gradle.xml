@@ -9,12 +9,15 @@
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/barcode_scan-3.0.1/android" />
-            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.18/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/barcode_scan-2.0.2/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/fluttertoast-4.0.1/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.6.0/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.21/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-0.0.1+2/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+4/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-0.0.4+1/android" />
-            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler-5.0.1+1/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12+2/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+2/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+10/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7/android" />

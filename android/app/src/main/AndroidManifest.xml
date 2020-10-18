@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.codemobiles.my_qrcode">
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
@@ -13,7 +14,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="กิจกรรม"
-        android:roundIcon="@mipmap/ic_launcher_rount">
+        android:roundIcon="@mipmap/ic_launcher_rount"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
