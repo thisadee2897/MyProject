@@ -85,61 +85,64 @@ class _ScanState extends State<Scan> {
         // ],
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Container(
+
           padding: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Visibility(
-                visible: vBool,
-                child: RepaintBoundary(
-                  key: globalKey,
-                  child:  CreditCardsPage(
-                    username: widget.username,
-                    act_name: act_name,
-                    damage: damage,
-                    fName: fName,
-                    lName: lName,
-                    unit: unit,
-                    program: program,
-                    subject: subject,
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Visibility(
+                  visible: vBool,
+                  child: RepaintBoundary(
+                    key: globalKey,
+                    child:  CreditCardsPage(
+                      username: widget.username,
+                      act_name: act_name,
+                      damage: damage,
+                      fName: fName,
+                      lName: lName,
+                      unit: unit,
+                      program: program,
+                      subject: subject,
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                qrCodeResult,
-                style: TextStyle(
-                  fontSize: 20.0,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              FlatButton(
-                padding: EdgeInsets.all(15.0),
-                onPressed: () async {
-                  String codeSanner =
-                  (await BarcodeScanner.scan()); //barcode scnner
-                  setState(() {
-                    qrCodeResult = codeSanner;
-                    getData(codeSanner);
-
-                  });
-
-
-                },
-                child: Text(
-                  "SCAN QR CODE",
+                Text(
+                  qrCodeResult,
                   style: TextStyle(
-                      color: Colors.blue, fontWeight: FontWeight.bold),
+                    fontSize: 20.0,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.blue, width: 3.0),
-                    borderRadius: BorderRadius.circular(20.0)),
-              )
-            ],
+                SizedBox(
+                  height: 20.0,
+                ),
+                FlatButton(
+                  padding: EdgeInsets.all(15.0),
+                  onPressed: () async {
+                    String codeSanner =
+                    (await BarcodeScanner.scan()); //barcode scnner
+                    setState(() {
+                      qrCodeResult = codeSanner;
+                      getData(codeSanner);
+
+                    });
+
+
+                  },
+                  child: Text(
+                    "SCAN QR CODE",
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.blue, width: 3.0),
+                      borderRadius: BorderRadius.circular(20.0)),
+                )
+              ],
+            ),
           ),
         ),
       ),
