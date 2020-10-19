@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 import 'package:barcode_scan/barcode_scan.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 import 'Page/slip.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'dart:ui' as ui;
@@ -80,9 +82,9 @@ class _ScanState extends State<Scan> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Scanner"),
-        // actions: <Widget>[
-        //   IconButton(icon: Icon(Icons.share), onPressed: shared),
-        // ],
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.share), onPressed: shared),
+        ],
         centerTitle: true,
       ),
       body: SafeArea(
@@ -185,24 +187,6 @@ class _ScanState extends State<Scan> {
     capture();
   }
 
-  // Future shared() async {
-  //   try {
-  //     RenderRepaintBoundary boundary =
-  //         globalKey.currentContext.findRenderObject();
-  //     var image = await boundary.toImage();
-  //     ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
-  //     Uint8List pngBytes = byteData.buffer.asUint8List();
-  //
-  //     final tempDir = await getTemporaryDirectory();
-  //     final file = await File('${tempDir.path}/image.png').create();
-  //     await file.writeAsBytes(pngBytes);
-  //     final channel = MethodChannel('cm.share/share');
-  //     channel.invokeMethod('shareFile', 'image.png');
-  //   } catch (e) {
-  //     print(e.toString());
-  //   }
-  // }
-
   _requestPermission() async {
     Map<Permission, PermissionStatus> statuses = await [
       Permission.storage,
@@ -217,17 +201,38 @@ class _ScanState extends State<Scan> {
   }
 
   void capture() async {
-    print(vBool);
+    try {
+      RenderRepaintBoundary boundary =
+      globalKey.currentContext.findRenderObject();
+      var image = await boundary.toImage();
+      ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
+      Uint8List pngBytes = byteData.buffer.asUint8List();
 
-    RenderRepaintBoundary boundary =
-    globalKey.currentContext.findRenderObject();
-    ui.Image image = await boundary.toImage(pixelRatio: 1);
-    ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    final result = await ImageGallerySaver.saveImage(
-        byteData.buffer.asUint8List(),
-        name: "$qrCodeResult${widget.username}");
-    print(result);
-    _toastInfo(result.toString());
+      final tempDir = await getTemporaryDirectory();
+      final file = await File('${tempDir.path}/image.png').create();
+      await file.writeAsBytes(pngBytes);
+      final channel = MethodChannel('cm.share/share');
+      channel.invokeMethod('shareFile', 'image.png');
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+  Future shared() async {
+    try {
+      RenderRepaintBoundary boundary =
+      globalKey.currentContext.findRenderObject();
+      var image = await boundary.toImage();
+      ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
+      Uint8List pngBytes = byteData.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final file = await File('${tempDir.path}/image.png').create();
+      await file.writeAsBytes(pngBytes);
+      final channel = MethodChannel('cm.share/share');
+      channel.invokeMethod('shareFile', 'image.png');
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
 
